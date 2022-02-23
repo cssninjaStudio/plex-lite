@@ -1,0 +1,46 @@
+<div
+  x-ref="messagescloneddrop"
+  @click.away="$refs.messagescloneddrop.classList.remove('is-active')"
+  class="dropdown-wrap is-right"
+>
+  <span class="indicator"></span>
+  <button
+    @click="$refs.messagescloneddrop.classList.add('is-active')"
+    class="dropdown-button"
+  >
+  <i class="iconify" data-icon="feather:mail"></i>
+  </button>
+  <div class="drop-menu">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <h3>Messages</h3>
+        <a>All</a>
+      </div>
+      <div class="message-items">
+        <div class="message-item">
+          <img class="avatar" src="/img/avatars/5.jpg" alt="" />
+          <div class="message-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <small>30 minutes ago</small>
+          </div>
+        </div>
+        <div class="message-item">
+          <div class="avatar is-fake is-primary">
+            <span>M</span>
+          </div>
+          <div class="message-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <small>1 hour ago</small>
+          </div>
+        </div>
+        <div class="message-item is-read">
+          <img class="avatar" src="/img/avatars/1.jpg" alt="" />
+          <div class="message-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <small>Yesterday</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+/* ==========================================================================
+1. Base Resets
+========================================================================== */
+
+body {
+  background: var(--dashboard-bg-color);
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+
+code {
+  background: var(--code-bg-color);
+  color: var(--code-color);
+}
+
+hr {
+  height: 1px;
+  background: var(--card-border-color);
+
+  &.is-inverted {
+    background: var(--dark-bg-light-16);
+  }
+}

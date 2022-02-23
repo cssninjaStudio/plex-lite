@@ -1,0 +1,38 @@
+<div
+  x-data="initCompressedSidebar()"
+  class="plex-compressed-sidebar"
+  :class="{
+        'is-inactive': !$store.app.isLayoutExpanded,
+        '': $store.app.isLayoutExpanded
+    }"
+>
+  <div class="compressed-header">
+    <h3>P</h3>
+  </div>
+  <div class="compressed-item is-bordered">
+    <button @click="toggleSidebar()" class="menu-icon v-5">
+      <span></span>
+    </button>
+  </div>
+  <div class="compressed-menu">
+    <a class="compressed-item is-active">
+      <i class="iconify" data-icon="feather:grid"></i>
+    </a>
+    <a class="compressed-item">
+      <i class="iconify" data-icon="feather:file-text"></i>
+    </a>
+    <a class="compressed-item">
+      <i class="iconify" data-icon="feather:file"></i>
+    </a>
+    <a class="compressed-item">
+      <i class="iconify" data-icon="feather:git-branch"></i>
+    </a>
+    <a class="compressed-item">
+      <i class="iconify" data-icon="feather:mail"></i>
+    </a>
+    <a class="compressed-item">
+      <i class="iconify" data-icon="feather:settings"></i>
+    </a>
+    <div class="compressed-naver"></div>
+  </div>
+</div>

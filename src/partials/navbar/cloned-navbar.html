@@ -1,0 +1,114 @@
+<div
+  x-on:scroll.window="scroll()"
+  class="static-nav cloned-nav"
+  :class="{
+        'is-active': scrolled,
+        '': !scrolled,
+        'is-expanded': $store.app.isLayoutExpanded,
+        '': !$store.app.isLayoutExpanded
+    }"
+>
+  <div class="cloned-wrapper">
+    <div
+      class="nav-start"
+      :class="{
+            'is-hidden': isMobileSearchActive,
+            '': !isMobileSearchActive
+        }"
+    >
+      <div class="nav-item mobile-item is-flex">
+        <button
+          @click="toggleMobileMenu()"
+          class="menu-icon v-2 mobile-sidebar-trigger"
+        >
+          <span></span>
+        </button>
+      </div>
+
+      <div class="field">
+        <div class="control has-icon">
+          <input
+            x-on:keyup="searchData($event)"
+            data-selector="cloned-results"
+            type="text"
+            class="input search-field"
+            placeholder="Search for transactions, accounts..."
+          />
+          <div class="form-icon">
+            <i class="iconify" data-icon="feather:search"></i>
+          </div>
+          <div id="cloned-results" class="search-results has-slimscroll"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="nav-end"
+      :class="{
+            'is-hidden': isMobileSearchActive,
+            '': !isMobileSearchActive
+        }"
+    >
+      <div
+        @click="toggleMobileSearch()"
+        class="nav-item mobile-item is-flex mobile-search-trigger"
+      >
+        <i class="iconify" data-icon="feather:search"></i>
+      </div>
+
+      <!--/partials/navbar/navbar-dropdowns/messages-dropdown.html-->
+      {{> messages-cloned-dropdown}}
+
+      <!--/partials/navbar/navbar-dropdowns/notifications-dropdown.html-->
+      {{> notifications-cloned-dropdown}}
+
+      <label class="theme-toggle">
+        <input
+          type="checkbox"
+          x-on:change="toggleTheme()"
+          :checked="$store.app.isDark"
+        />
+        <span class="theme-toggle-inner">
+          <i class="sun-icon iconify" data-icon="feather:sun"></i>
+          <i class="moon-icon iconify" data-icon="feather:moon"></i>
+        </span>
+      </label>
+
+      <!--/partials/navbar/navbar-dropdowns/account-dropdown.html-->
+      {{> account-cloned-dropdown}}
+    </div>
+
+    <div
+      class="mobile-search"
+      :class="{
+                'is-active': isMobileSearchActive,
+                '': !isMobileSearchActive
+            }"
+    >
+      <div class="field">
+        <div class="control has-icon has-icon-right">
+          <input
+            x-ref="searchmobilecloned"
+            x-on:keyup="searchData($event)"
+            data-selector="mobile-cloned-results"
+            type="text"
+            class="input search-field"
+            placeholder="Search for transactions, accounts..."
+          />
+          <div class="form-icon">
+            <i class="iconify" data-icon="feather:search"></i>
+          </div>
+          <div
+            @click="toggleMobileSearch(), $refs.searchmobilecloned.value = ''"
+            class="form-icon right-icon mobile-search-trigger"
+          >
+            <i class="iconify" data-icon="feather:x"></i>
+          </div>
+          <div
+            id="mobile-cloned-results"
+            class="search-results has-slimscroll"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

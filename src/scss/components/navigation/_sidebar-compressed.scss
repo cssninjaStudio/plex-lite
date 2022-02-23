@@ -1,0 +1,128 @@
+/* ==========================================================================
+Collapsed sidebar
+========================================================================== */
+
+.plex-compressed-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: var(--sidebar-default-bg-color);
+  border-right: 1px solid var(--sidebar-default-border-color);
+  transform: translateX(0);
+  transition: all 0.3s;
+  z-index: 92;
+
+  &.is-inactive {
+    transform: translateX(-100%);
+  }
+
+  .compressed-header {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--sidebar-default-border-color);
+
+    h3 {
+      font-family: "Pacifico", sans-serif;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: var(--title-color);
+    }
+  }
+
+  .compressed-menu {
+    position: relative;
+
+    .compressed-naver {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 60px;
+      width: 2px;
+      border-radius: 4px;
+      background: var(--primary);
+      transition: all 0.3s;
+    }
+  }
+
+  .compressed-item {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.is-bordered {
+      border-bottom: 1px solid var(--sidebar-default-border-color);
+    }
+
+    &.is-active {
+      svg {
+        stroke: var(--primary);
+        color: var(--primary);
+      }
+
+      &:first-child {
+        ~ .compressed-naver {
+          margin-top: 0;
+        }
+      }
+
+      &:nth-child(2) {
+        ~ .compressed-naver {
+          margin-top: 60px;
+        }
+      }
+
+      &:nth-child(3) {
+        ~ .compressed-naver {
+          margin-top: 120px;
+        }
+      }
+
+      &:nth-child(4) {
+        ~ .compressed-naver {
+          margin-top: 180px;
+        }
+      }
+
+      &:nth-child(5) {
+        ~ .compressed-naver {
+          margin-top: 240px;
+        }
+      }
+
+      &:nth-child(6) {
+        ~ .compressed-naver {
+          margin-top: 300px;
+        }
+      }
+    }
+
+    svg {
+      height: 20px;
+      width: 20px;
+      stroke-width: 1.6px;
+      stroke: var(--light-text);
+      color: var(--light-text);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .plex-compressed-sidebar {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .plex-compressed-sidebar {
+    display: none;
+  }
+}

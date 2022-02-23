@@ -1,0 +1,120 @@
+/* ==========================================================================
+Main wrapper
+========================================================================== */
+
+.plex-wrapper {
+  width: calc(100% - 320px);
+  margin-left: 320px;
+  min-height: 100vh;
+  background: var(--dashboard-bg-color);
+  padding: 0 40px;
+  padding-bottom: 80px;
+  transition: all 0.3s;
+
+  &.is-expanded {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+
+  .wrapper-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+
+    .dashboard-content {
+      padding: 16px 0 100px 0;
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        padding: 30px 0 20px 0;
+
+        > svg {
+          height: 22px;
+          width: 22px;
+          stroke: var(--light-text);
+          color: var(--light-text);
+          stroke-width: 1.4px;
+          margin-right: 8px;
+        }
+
+        > h3 {
+          text-transform: uppercase;
+          font-family: var(--font-alt);
+          font-weight: 500;
+          font-size: 0.8rem;
+          color: var(--light-text);
+        }
+
+        .dropdown-wrap {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .plex-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .plex-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+
+    .main-card {
+      .right-side {
+        min-width: 46% !important;
+      }
+    }
+
+    .card-group {
+      flex-direction: column !important;
+
+      .left-card {
+        margin-bottom: 30px;
+        margin-right: 0 !important;
+      }
+
+      .right-card {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .plex-wrapper {
+    &:not(.is-expanded) {
+      width: calc(100% - 240px);
+      margin-left: 240px;
+
+      .main-card {
+        .right-side {
+          min-width: 46% !important;
+        }
+      }
+
+      .card-group {
+        flex-direction: column !important;
+
+        .left-card {
+          margin-bottom: 16px;
+          margin-right: 0 !important;
+        }
+
+        .right-card {
+          margin-left: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}

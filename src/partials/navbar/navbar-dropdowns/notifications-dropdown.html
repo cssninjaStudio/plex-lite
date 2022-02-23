@@ -1,0 +1,50 @@
+<div
+  x-ref="notifdrop"
+  @click.away="$refs.notifdrop.classList.remove('is-active')"
+  class="dropdown-wrap is-right"
+>
+  <span class="indicator"></span>
+  <button
+    @click="$refs.notifdrop.classList.add('is-active')"
+    class="dropdown-button"
+  >
+  <i class="iconify" data-icon="feather:bell"></i>
+  </button>
+  <div class="drop-menu">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <h3>Notifications</h3>
+        <a>All</a>
+      </div>
+      <div class="notification-items">
+        <div class="notification-item">
+          <div class="avatar is-list-icon">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <div class="notification-content">
+            <p><a>5 new invoices</a> were recently added</p>
+            <small>3 hours ago</small>
+          </div>
+        </div>
+        <div class="notification-item">
+          <div class="avatar is-list-icon">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <div class="notification-content">
+            <p><a>3 invoices</a> were marked as approved</p>
+            <small>5 hours ago</small>
+          </div>
+        </div>
+        <div class="notification-item is-warning">
+          <div class="avatar is-list-icon">
+            <i class="iconify" data-icon="feather:alert-octagon"></i>
+          </div>
+          <div class="notification-content">
+            <p>Some items managed by you are on <a>overdue</a></p>
+            <small>5 hours ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

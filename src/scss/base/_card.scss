@@ -1,0 +1,52 @@
+/*
+    1. Card
+    2. Box
+    3. Plex Card
+*/
+
+/* ==========================================================================
+1. Card
+========================================================================== */
+
+.card {
+  background: var(--card-bg-color);
+  box-shadow: none;
+  border: 1px solid var(--card-border-color);
+
+  .card-footer {
+    .card-footer-item {
+      color: var(--medium-text);
+      transition: all 0.3s;
+
+      &:hover {
+        color: var(--primary);
+        background: var(--wrap-muted-color);
+      }
+    }
+  }
+
+  &.has-shadow {
+    box-shadow: var(--light-box-shadow);
+  }
+}
+
+/* ==========================================================================
+2. Box
+========================================================================== */
+
+.box {
+  background: var(--card-bg-color);
+  box-shadow: var(--light-box-shadow);
+  border: 1px solid var(--card-border-color);
+}
+
+/* ==========================================================================
+3. Plex Card
+========================================================================== */
+
+.plex-card {
+  width: 100%;
+  background: var(--card-bg-color);
+  border-radius: 0.85rem;
+  border: 1px solid var(--card-border-color);
+}

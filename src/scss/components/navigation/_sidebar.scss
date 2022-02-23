@@ -1,0 +1,212 @@
+/* ==========================================================================
+Expanded sidebar
+========================================================================== */
+
+.plex-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  background: var(--sidebar-default-bg-color);
+  border-right: 1px solid var(--sidebar-default-border-color);
+  z-index: 91;
+  transform: translateX(0);
+  transition: all 0.3s;
+
+  &.is-inactive {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-header {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    h3 {
+      font-family: "Pacifico", sans-serif;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: var(--title-color);
+    }
+  }
+
+  .avatar-container {
+    position: relative;
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar-wrapper {
+      text-align: center;
+
+      .avatar {
+        position: relative;
+        max-width: 70px;
+        max-height: 70px;
+        margin: 0 auto 8px auto;
+
+        img {
+          display: block;
+          border-radius: 50%;
+        }
+
+        .badge {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 22px;
+          width: 22px;
+          border: 2px solid var(--sidebar-default-bg-color);
+          border-radius: 50%;
+          background: var(--primary);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            height: 10px;
+            width: 10px;
+            stroke: var(--white);
+            color: var(--white);
+            stroke-width: 3px;
+          }
+        }
+      }
+
+      h3 {
+        font-family: var(--font-alt);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--title-color);
+      }
+
+      p {
+        font-family: var(--font);
+        font-size: 0.85rem;
+        color: var(--light-text);
+      }
+    }
+  }
+
+  .sidebar-menu {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 220px);
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0 16px 0 60px;
+
+      &.is-active {
+        &:first-child {
+          ~ .naver {
+            margin-top: 0;
+          }
+        }
+
+        &:nth-child(2) {
+          ~ .naver {
+            margin-top: 50px;
+          }
+        }
+
+        &:nth-child(3) {
+          ~ .naver {
+            margin-top: 100px;
+          }
+        }
+
+        &:nth-child(4) {
+          ~ .naver {
+            margin-top: 150px;
+          }
+        }
+
+        &:nth-child(5) {
+          ~ .naver {
+            margin-top: 200px;
+          }
+        }
+
+        &:nth-child(6) {
+          ~ .naver {
+            margin-top: 250px;
+          }
+        }
+
+        span {
+          color: var(--title-color);
+        }
+
+        svg {
+          stroke: var(--primary);
+          color: var(--primary);
+        }
+      }
+
+      span {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-left: 16px;
+        color: var(--medium-text);
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+        stroke-width: 1.6px;
+        stroke: var(--light-text);
+        color: var(--light-text);
+      }
+    }
+
+    .naver {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 50px;
+      width: 2px;
+      border-radius: 4px;
+      background: var(--primary);
+      transition: all 0.3s;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .plex-sidebar,
+  .plex-sidebar.is-inactive {
+    transform: translateX(-100%);
+
+    &.is-mobile-active {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .plex-sidebar,
+  .plex-sidebar.is-inactive {
+    transform: translateX(-100%);
+
+    &.is-mobile-active {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .plex-sidebar {
+    width: 240px;
+  }
+}
