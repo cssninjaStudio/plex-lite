@@ -1,0 +1,648 @@
+/* ==========================================================================
+Accounting Dashboard
+========================================================================== */
+
+.accounting-dashboard {
+  .main-card {
+    @include plexCard();
+
+    padding: 1.875rem;
+    display: flex;
+    margin-bottom: 1.875rem;
+
+    .left-side {
+      flex-grow: 2;
+      border-#{$end-direction}: 1px solid var(--card-border-color);
+      padding-#{$end-direction}: 1.875rem;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        h2 {
+          font-family: var(--font);
+          font-weight: 600;
+          font-size: 1.8rem;
+          color: var(--title-color);
+
+          &:before {
+            content: "$";
+            position: relative;
+            top: -5px;
+            font-size: 70%;
+          }
+        }
+
+        span {
+          font-family: var(--font);
+          font-weight: 500;
+          font-size: 0.9rem;
+          color: var(--title-color);
+        }
+      }
+
+      .intro-text {
+        padding: 1rem 0 1.5rem 0;
+
+        p {
+          max-width: 420px;
+          font-family: var(--font);
+          font-size: 0.9rem;
+          color: var(--light-text);
+        }
+      }
+
+      .latest-items {
+        .latest-item {
+          display: flex;
+          align-items: center;
+          border-top: 1px solid var(--card-border-color);
+          padding: 0.75rem 0;
+
+          .date {
+            font-family: var(--font);
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-#{$end-direction}: 2.5rem;
+          }
+
+          .type {
+            font-family: var(--font);
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--title-color);
+          }
+
+          .amount {
+            margin-#{$start-direction}: auto;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            &.is-positive {
+              color: var(--primary);
+            }
+
+            &.is-negative {
+              color: var(--medium-text);
+            }
+
+            span {
+              &:before {
+                content: "$";
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 35%;
+      padding-#{$start-direction}: 1.875rem;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        h3 {
+          font-family: var(--font-alt);
+          font-weight: 600;
+          font-size: 1rem;
+          color: var(--title-color);
+        }
+      }
+
+      .custom-chart {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-grow: 2;
+
+        .chart-bar {
+          position: relative;
+          min-height: 180px;
+          width: 10px;
+          background: var(--wrap-muted-color);
+          margin: 0 1rem;
+          border-radius: 50rem 50rem 0 0;
+
+          &:before {
+            content: attr(data-day);
+            position: absolute;
+            top: -26px;
+            #{$start-direction}: 0;
+            transform: translateX(-40%);
+            min-width: 1.875rem;
+            text-align: center;
+            font-size: 0.75rem;
+            font-family: var(--font);
+            color: var(--light-text);
+          }
+
+          &:first-child {
+            .animated-bar {
+              transition-delay: 0.1s;
+            }
+          }
+
+          &:nth-child(2) {
+            .animated-bar {
+              transition-delay: 0.25s;
+            }
+          }
+
+          &:nth-child(3) {
+            .animated-bar {
+              transition-delay: 0.4s;
+            }
+          }
+
+          &:nth-child(4) {
+            .animated-bar {
+              transition-delay: 0.55s;
+            }
+          }
+
+          &:nth-child(5) {
+            .animated-bar {
+              transition-delay: 0.7s;
+            }
+          }
+
+          &:nth-child(6) {
+            .animated-bar {
+              transition-delay: 0.85s;
+            }
+          }
+
+          &:nth-child(7) {
+            .animated-bar {
+              transition-delay: 1s;
+            }
+          }
+
+          .animated-bar {
+            position: absolute;
+            bottom: 0;
+            #{$start-direction}: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary);
+            border-radius: 50rem 50rem 0 0;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+
+            &.is-lower {
+              background: var(--secondary-light-10);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Grouped cards
+  .card-group {
+    display: flex;
+
+    .left-card,
+    .right-card {
+      @include plexCard();
+    }
+
+    .left-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 2;
+      margin-#{$end-direction}: 1rem;
+      padding: 1.875rem;
+
+      .mail-icon-outer {
+        position: relative;
+        height: 60px;
+        width: 60px;
+        min-width: 60px;
+        border-radius: 50%;
+        border: 1.4px solid var(--card-border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: calc(50% - 12px);
+          #{$start-direction}: calc(50% - 12px);
+          height: 24px;
+          width: 24px;
+          border-radius: 50%;
+          background: var(--secondary);
+          animation: wave 1.6s infinite;
+          animation-duration: 2s;
+          transform-origin: center center;
+          z-index: 0;
+        }
+
+        .mail-icon-inner {
+          position: relative;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          border: 1.4px solid var(--card-border-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1;
+
+          .icon-wrap {
+            position: relative;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg-color);
+            z-index: 1;
+
+            svg {
+              height: 18px;
+              width: 18px;
+              stroke: var(--secondary-light-10);
+              color: var(--secondary-light-10);
+            }
+          }
+        }
+      }
+
+      .message-sender {
+        display: flex;
+        align-items: center;
+        padding: 0 1.875 0 1.25rem;
+        border-#{$end-direction}: 1px solid var(--card-border-color);
+        min-width: 200px;
+
+        .avatar {
+          margin-#{$start-direction}: 0.5rem;
+        }
+
+        .meta {
+          margin-#{$start-direction}: 0.5rem;
+
+          span {
+            display: block;
+            line-height: 1.2;
+
+            &:first-child {
+              font-family: var(--font-alt);
+              font-size: 0.8rem;
+              font-weight: 600;
+              color: var(--title-color);
+            }
+
+            &:nth-child(2) {
+              font-family: var(--font);
+              font-size: 0.8rem;
+              color: var(--light-text);
+            }
+          }
+        }
+      }
+
+      .message-text {
+        padding-#{$start-direction}: 1.875rem;
+
+        p {
+          color: var(--light-text);
+          font-family: var(--font);
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .right-card {
+      flex-grow: 1;
+      max-width: 30%;
+      margin-#{$start-direction}: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+          text-transform: uppercase;
+          font-family: var(--font);
+          font-size: 0.75rem;
+          color: var(--light-text);
+        }
+
+        .custom-button {
+          padding: 0.25rem 0.75rem;
+          font-size: 0.8rem;
+          border-radius: 50rem;
+          background: var(--secondary);
+          color: var(--white);
+        }
+      }
+
+      .card-inner {
+        h2 {
+          font-family: var(--font);
+          font-weight: 600;
+          font-size: 1.6rem;
+          color: var(--title-color);
+
+          &:before {
+            content: "$";
+            position: relative;
+            top: -5px;
+            font-size: 70%;
+          }
+        }
+      }
+    }
+  }
+
+  .activity-items {
+    .activity-item {
+      @include plexCard();
+
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      .users {
+        display: flex;
+        align-items: center;
+
+        .meta {
+          margin-#{$start-direction}: 0.75rem;
+
+          span {
+            display: block;
+            line-height: 1.3;
+
+            &:first-child {
+              font-family: var(--font-alt);
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: var(--title-color);
+            }
+
+            &:nth-child(2) {
+              font-family: var(--font);
+              font-size: 0.9rem;
+              color: var(--light-text);
+            }
+          }
+        }
+      }
+
+      .details {
+        display: flex;
+        align-items: center;
+        margin-#{$start-direction}: auto;
+
+        .amount {
+          margin-#{$end-direction}: 2rem;
+
+          span {
+            display: block;
+            line-height: 1.3;
+
+            &:first-child {
+              text-transform: uppercase;
+              font-family: var(--font);
+              font-weight: 500;
+              font-size: 0.7rem;
+              color: var(--light-text);
+            }
+
+            &:nth-child(2) {
+              font-family: var(--font);
+              font-weight: 600;
+              font-size: 1.1rem;
+              color: var(--title-color);
+
+              &:before {
+                content: "$";
+                position: relative;
+                top: -5px;
+                font-size: 70%;
+              }
+            }
+          }
+        }
+
+        .dropdown-wrap {
+          .dropdown-button {
+            height: 36px;
+            width: 36px;
+
+            svg {
+              height: 22px;
+              width: 22px;
+            }
+          }
+        }
+
+        .list-icon-button {
+          height: 36px;
+          width: 36px;
+          background: none;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          outline: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            background: var(--wrap-bg-color);
+            border-color: var(--wrap-border-color);
+            box-shadow: var(--light-box-shadow);
+
+            svg {
+              stroke: var(--title-color);
+              color: var(--title-color);
+            }
+          }
+
+          &.is-file {
+            margin-#{$end-direction}: 1.875rem;
+
+            svg {
+              stroke: var(--secondary-light-8);
+              color: var(--secondary-light-8);
+            }
+          }
+
+          svg {
+            height: 22px;
+            width: 22px;
+            stroke: var(--light-text);
+            stroke: var(--light-text);
+            stroke-width: 1.4px;
+            transition: stroke 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .accounting-dashboard {
+    .main-card {
+      flex-direction: column;
+
+      .left-side {
+        padding-#{$end-direction}: 0 !important;
+        border-#{$end-direction}: none !important;
+      }
+
+      .right-side {
+        padding-#{$start-direction}: 0 !important;
+
+        .header {
+          padding-top: 1.5rem;
+        }
+
+        .custom-chart {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+
+    .card-group {
+      flex-direction: column;
+
+      .left-card {
+        flex-direction: column;
+        margin-#{$end-direction}: 0;
+        width: 100%;
+        margin-bottom: 1.875rem;
+
+        .message-sender {
+          flex-direction: column;
+          padding: 1rem !important;
+          border-#{$end-direction}: none !important;
+        }
+
+        .message-text {
+          max-width: 236px !important;
+          text-align: center;
+          margin: 0 auto !important;
+          padding: 0 !important;
+        }
+      }
+
+      .right-card {
+        flex-direction: column;
+        margin-#{$start-direction}: 0 !important;
+        width: 100%;
+        max-width: 100% !important;
+      }
+    }
+
+    .activity-items {
+      .activity-item {
+        position: relative;
+        flex-direction: column;
+
+        .users {
+          flex-direction: column;
+          text-align: center;
+
+          .meta {
+            margin: 0.625rem 0 !important;
+          }
+        }
+
+        .details {
+          justify-content: center;
+          width: 100%;
+
+          .amount {
+            margin: 1rem 0 0 0 !important;
+          }
+
+          .list-icon-button {
+            display: none !important;
+          }
+
+          .dropdown-wrap {
+            position: absolute;
+            top: 0.625rem;
+            #{$end-direction}: 0.625rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .accounting-dashboard {
+    .main-card {
+      .right-side {
+        min-width: 46% !important;
+      }
+    }
+
+    .card-group {
+      flex-direction: column !important;
+
+      .left-card {
+        margin-bottom: 30px;
+        margin-#{$end-direction}: 0 !important;
+      }
+
+      .right-card {
+        margin-#{$start-direction}: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .accounting-dashboard {
+    .main-card {
+      .right-side {
+        min-width: 46% !important;
+      }
+    }
+
+    .card-group {
+      flex-direction: column !important;
+
+      .left-card {
+        margin-bottom: 16px;
+        margin-#{$end-direction}: 0 !important;
+      }
+
+      .right-card {
+        margin-#{$start-direction}: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+}

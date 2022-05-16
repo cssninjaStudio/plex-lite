@@ -23,36 +23,59 @@ export interface ColorCallSet {
 }
 export const bulmaCssVariablesDefs: ColorCallSet = {
   "danger": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "dark-color",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "light-color",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "dark": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "lighten",
+        "fnArg": "800",
+        "composeArg": null
+      },
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "info": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "dark-color",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "light-color",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "link": {
     "calls": [
-      {
-        "fn": "rgba",
-        "fnArg": "100",
-        "composeArg": null
-      },
-      {
-        "fn": "rgba",
-        "fnArg": "25",
-        "composeArg": null
-      },
-      {
-        "fn": "darken",
-        "fnArg": "250",
-        "composeArg": null
-      },
-      {
-        "fn": "darken",
-        "fnArg": "500",
-        "composeArg": null
-      },
       {
         "fn": "color-invert",
         "fnArg": null,
@@ -71,15 +94,69 @@ export const bulmaCssVariablesDefs: ColorCallSet = {
     ]
   },
   "primary": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "dark-color",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "light-color",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "success": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "dark-color",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "light-color",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "warning": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "color-invert",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "dark-color",
+        "fnArg": null,
+        "composeArg": null
+      },
+      {
+        "fn": "light-color",
+        "fnArg": null,
+        "composeArg": null
+      }
+    ]
   },
   "white": {
-    "calls": []
+    "calls": [
+      {
+        "fn": "lighten",
+        "fnArg": "800",
+        "composeArg": null
+      }
+    ]
   }
 }

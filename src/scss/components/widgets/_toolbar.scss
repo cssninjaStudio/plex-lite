@@ -1,0 +1,110 @@
+/* ==========================================================================
+Toolbar
+========================================================================== */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .toolbar-start {
+    display: flex;
+    align-items: center;
+  }
+
+  .toolbar-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .sorting-select {
+      select {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        border-#{$end-direction}: 1px solid var(--input-base-border-color);
+        box-shadow: none !important;
+      }
+    }
+
+    .icon-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding: 0 1rem;
+
+      .icon-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+
+        .iconify {
+          font-size: 1.25rem;
+          color: var(--medium-text);
+        }
+
+        &.is-active,
+        &:hover {
+          .iconify {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    .under-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      padding: 0 1rem;
+
+      .under-link {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: var(--medium-text);
+        transition: color .3s;
+
+        span {
+          font-family: var(--font);
+          font-size: .9rem;
+        }
+
+        &:hover {
+          color: var(--primary);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &.is-spaced-bottom {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .toolbar {
+    &.is-responsive {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .toolbar-end {
+        width: 100%;
+        justify-content: space-between;
+
+        .hidden-item {
+          display: none;
+        }
+
+        .icon-links {
+          padding-#{$start-direction}: 0;
+        }
+      }
+    }
+  }
+}

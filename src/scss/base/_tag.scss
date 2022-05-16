@@ -12,19 +12,25 @@
   height: 2.5em;
   font-family: var(--font);
 
-  &:not(.is-primary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger):not(.is-green):not(.is-blue):not(.is-orange):not(.is-purple):not(.is-solid) {
+  &:not(.is-primary):not(.is-secondary):not(.is-success):not(.is-info):not(.is-warning):not(.is-danger):not(.is-green):not(.is-blue):not(.is-orange):not(.is-purple):not(.is-solid) {
     background: var(--tag-default-bg-color);
     color: var(--tag-default-color);
   }
 
+  &.is-uppercase {
+    text-transform: uppercase;
+    font-size: .65rem;
+    font-weight: 500;
+  }
+
   &.is-rounded {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-#{$start-direction}: 1em;
+    padding-#{$end-direction}: 1em;
   }
 
   &.is-curved {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-#{$start-direction}: 1em;
+    padding-#{$end-direction}: 1em;
     border-radius: 0.5rem;
   }
 
@@ -42,10 +48,16 @@
     background: var(--tag-solid-bg-color);
     border: 1px solid var(--tag-solid-border-color);
     color: var(--light-text);
-    line-height: 1.8;
   }
 
   &.is-primary {
+    color: var(--white) !important;
+
+    &.is-light {
+      background-color: var(--tag-primary-light-bg-color);
+      color: var(--tag-primary-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--primary-box-shadow);
     }
@@ -57,8 +69,33 @@
     }
   }
 
+  &.is-secondary {
+    color: var(--white);
+    background: var(--secondary);
+
+    &.is-light {
+      background-color: var(--tag-secondary-light-bg-color);
+      color: var(--tag-secondary-light-color);
+    }
+    
+    &.is-elevated {
+      box-shadow: var(--secondary-box-shadow);
+    }
+
+    &.is-outlined {
+      background: none !important;
+      color: var(--secondary);
+      border: 1px solid var(--secondary);
+    }
+  }
+
   &.is-success {
     color: var(--white);
+
+    &.is-light {
+      background-color: var(--tag-success-light-bg-color);
+      color: var(--tag-success-light-color);
+    }
 
     &.is-elevated {
       box-shadow: var(--success-box-shadow);
@@ -72,6 +109,11 @@
   }
 
   &.is-info {
+    &.is-light {
+      background-color: var(--tag-info-light-bg-color);
+      color: var(--tag-info-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--info-box-shadow);
     }
@@ -84,6 +126,11 @@
   }
 
   &.is-warning {
+    &.is-light {
+      background-color: var(--tag-warning-light-bg-color);
+      color: var(--tag-warning-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--warning-box-shadow);
     }
@@ -96,6 +143,11 @@
   }
 
   &.is-danger {
+    &.is-light {
+      background-color: var(--tag-danger-light-bg-color);
+      color: var(--tag-danger-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--danger-box-shadow);
     }
@@ -110,6 +162,11 @@
   &.is-blue {
     background: var(--blue);
     color: var(--white);
+
+    &.is-light {
+      background-color: var(--tag-blue-light-bg-color);
+      color: var(--tag-blue-light-color);
+    }
 
     &.is-elevated {
       box-shadow: var(--blue-box-shadow);
@@ -126,6 +183,11 @@
     background: var(--green);
     color: var(--white);
 
+    &.is-light {
+      background-color: var(--tag-green-light-bg-color);
+      color: var(--tag-green-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--green-box-shadow);
     }
@@ -141,6 +203,11 @@
     background: var(--purple);
     color: var(--white);
 
+    &.is-light {
+      background-color: var(--tag-purple-light-bg-color);
+      color: var(--tag-purple-light-color);
+    }
+
     &.is-elevated {
       box-shadow: var(--purple-box-shadow);
     }
@@ -155,6 +222,11 @@
   &.is-orange {
     background: var(--orange);
     color: var(--white);
+
+    &.is-light {
+      background-color: var(--tag-orange-light-bg-color);
+      color: var(--tag-orange-light-color);
+    }
 
     &.is-elevated {
       box-shadow: var(--orange-box-shadow);

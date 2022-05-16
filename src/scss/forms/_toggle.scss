@@ -23,10 +23,10 @@
     }
   }
 
-  &.is-accent {
+  &.is-secondary {
     input {
       &:checked + i {
-        background-color: var(--accent);
+        background-color: var(--secondary);
       }
     }
   }
@@ -66,10 +66,10 @@
   i {
     position: relative;
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-#{$end-direction}: 0.5rem;
     width: 46px;
     height: 26px;
-    background-color: #e6e6e6;
+    background-color: var(--button-base-border-color);
     border-radius: 23px;
     vertical-align: text-bottom;
     transition: all 0.3s linear;
@@ -77,10 +77,10 @@
     &::before {
       content: "";
       position: absolute;
-      left: 0;
+      #{$start-direction}: 0;
       width: 42px;
       height: 22px;
-      background-color: var(--white);
+      background-color: var(--button-base-bg-color);
       border-radius: 11px;
       transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
       transition: all 0.25s linear;
@@ -89,7 +89,7 @@
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      #{$start-direction}: 0;
       width: 22px;
       height: 22px;
       background-color: var(--white);
@@ -148,7 +148,7 @@
   input {
     position: absolute;
     top: 0;
-    left: 0;
+    #{$start-direction}: 0;
     z-index: -1;
     opacity: 0;
 
@@ -157,7 +157,7 @@
         span {
           &.track {
             .track-knob {
-              margin-left: 22px;
+              margin-#{$start-direction}: 22px;
               transform: rotate(360deg);
               background: var(--primary);
               border-color: var(--primary);
@@ -205,7 +205,7 @@
         .track-knob {
           position: absolute;
           top: -8px;
-          left: -2px;
+          #{$start-direction}: -2px;
           height: 26px;
           width: 26px;
           border-radius: 50%;
@@ -256,7 +256,7 @@
   input {
     position: absolute;
     top: 0;
-    left: 0;
+    #{$start-direction}: 0;
     height: 100%;
     width: 100%;
     opacity: 0%;
@@ -266,12 +266,12 @@
     &:checked {
       + .theme-toggle-inner {
         .sun-icon {
-          transform: translate(-45%, 150%);
+          transform: translate($transform-direction * -45%, 150%);
           opacity: 0%;
         }
 
         .moon-icon {
-          transform: translate(-45%, -50%);
+          transform: translate($transform-direction * -45%, -50%);
           opacity: 100%;
         }
       }
@@ -292,7 +292,7 @@
     .moon-icon {
       position: absolute;
       top: 50%;
-      left: 50%;
+      #{$start-direction}: 50%;
       display: block;
       opacity: 0%;
       transition: transform 0.3s, opacity 0.3s;
@@ -306,12 +306,12 @@
     }
 
     .sun-icon {
-      transform: translate(-48%, -50%);
+      transform: translate($transform-direction * -48%, -50%);
       opacity: 100%;
     }
 
     .moon-icon {
-      transform: translate(-45%, -150%);
+      transform: translate($transform-direction * -45%, -150%);
     }
   }
 }

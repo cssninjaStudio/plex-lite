@@ -3,6 +3,8 @@ Dropdowns
 ========================================================================== */
 
 .dropdown {
+  text-align: #{$start-direction};
+
   &.is-spaced {
     > button {
       background: transparent;
@@ -106,12 +108,12 @@ Dropdowns
           width: 32px;
           height: 32px;
           border-radius: 50%;
-          margin-right: 20px;
+          margin-#{$end-direction}: 20px;
         }
 
         i {
           font-size: 16px;
-          margin-right: 22px;
+          margin-#{$end-direction}: 22px;
           color: var(--medium-text);
           transition: all 0.3s;
         }
@@ -129,8 +131,8 @@ Dropdowns
           display: none;
 
           svg {
-            margin-right: 0;
-            margin-left: auto;
+            margin-#{$end-direction}: 0;
+            margin-#{$start-direction}: auto;
           }
         }
       }
@@ -189,6 +191,7 @@ Custom Dropdown
 
 .dropdown-wrap {
   position: relative;
+  text-align: #{$start-direction};
 
   &.is-active {
     .drop-menu {
@@ -198,14 +201,14 @@ Custom Dropdown
     }
   }
 
-  &.is-right {
+  &.is-#{$end-direction} {
     .drop-menu {
-      left: unset !important;
-      right: -12px;
+      #{$start-direction}: unset !important;
+      #{$end-direction}: -12px;
 
       &:after,
       &:before {
-        left: 90%;
+        #{$start-direction}: 90%;
       }
     }
   }
@@ -226,14 +229,14 @@ Custom Dropdown
         border-color: rgba(255, 255, 255, 0);
         border-top-color: var(--dropdown-bg-color);
         border-width: 11px;
-        margin-left: -11px;
+        margin-#{$start-direction}: -11px;
       }
 
       &:before {
         border-color: rgba(237, 237, 237, 0);
         border-top-color: var(--dropdown-border-color);
         border-width: 12px;
-        margin-left: -12px;
+        margin-#{$start-direction}: -12px;
       }
     }
   }
@@ -270,7 +273,7 @@ Custom Dropdown
       width: 40px;
       min-width: 40px;
       padding: 0;
-      margin-left: 10px;
+      margin-#{$start-direction}: 10px;
 
       img {
         display: block;
@@ -297,21 +300,22 @@ Custom Dropdown
     display: block;
     position: absolute;
     top: 2px;
-    right: 2px;
+    #{$end-direction}: 2px;
     height: 8px;
     width: 8px;
     border-radius: 50%;
     background: var(--secondary);
+    z-index: 2;
   }
 
   .drop-menu {
     position: absolute;
     top: 58px;
-    left: 0;
+    #{$start-direction}: 0;
     background: var(--dropdown-bg-color);
     width: 300px;
     border: 1px solid var(--dropdown-border-color);
-    border-radius: 3px;
+    border-radius: .65rem;
     opacity: 0;
     transform: translateY(5px);
     box-shadow: var(--light-box-shadow);
@@ -322,7 +326,7 @@ Custom Dropdown
     &:after,
     &:before {
       bottom: 100%;
-      left: 10%;
+      #{$start-direction}: 10%;
       border: solid transparent;
       content: " ";
       height: 0;
@@ -335,14 +339,14 @@ Custom Dropdown
       border-color: rgba(255, 255, 255, 0);
       border-bottom-color: var(--dropdown-bg-color);
       border-width: 11px;
-      margin-left: -11px;
+      margin-#{$start-direction}: -11px;
     }
 
     &:before {
       border-color: rgba(237, 237, 237, 0);
       border-bottom-color: var(--dropdown-border-color);
       border-width: 12px;
-      margin-left: -12px;
+      margin-#{$start-direction}: -12px;
     }
 
     .menu-inner {
@@ -451,7 +455,7 @@ Messages
       }
 
       .message-content {
-        margin-left: 14px;
+        margin-#{$start-direction}: 14px;
 
         p {
           font-family: var(--font);
@@ -505,7 +509,7 @@ Notifications
       }
 
       .notification-content {
-        margin-left: 14px;
+        margin-#{$start-direction}: 14px;
 
         p {
           font-family: var(--font);
@@ -567,7 +571,7 @@ Options
       }
 
       .option-content {
-        margin-left: 12px;
+        margin-#{$start-direction}: 12px;
 
         span {
           display: block;
@@ -595,15 +599,15 @@ Options
   .static-nav {
     .dropdown-wrap {
       .drop-menu {
-        left: 0 !important;
-        right: 0 !important;
+        #{$start-direction}: 0 !important;
+        #{$end-direction}: 0 !important;
         margin: 0 auto;
         position: fixed;
         top: 77px;
 
         &:before,
         &:after {
-          left: 50% !important;
+          #{$start-direction}: 50% !important;
         }
       }
     }

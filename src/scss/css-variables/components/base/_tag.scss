@@ -3,6 +3,31 @@
   --tag-default-color: var(--dark-text);
   --tag-solid-bg-color: var(--white);
   --tag-solid-border-color: var(--border);
+  --tag-primary-light-bg-color: var(--primary-light-35);
+  --tag-secondary-light-bg-color: var(--secondary-light-35);
+  --tag-info-light-bg-color: var(--info-light-48);
+  --tag-success-light-bg-color: var(--success-light-45);
+  --tag-warning-light-bg-color: var(--warning-light-32);
+  --tag-danger-light-bg-color: var(--danger-light-40);
+  --tag-purple-light-bg-color: var(--purple-light-36);
+  --tag-yellow-light-bg-color: var(--yellow-light-22);
+  --tag-orange-light-bg-color: var(--orange-light-20);
+  --tag-green-light-bg-color: var(--green-light-22);
+  --tag-red-light-bg-color: var(--red-light-40);
+  --tag-blue-light-bg-color: var(--blue-light-34);
+  --tag-primary-light-color: var(--primary);
+  --tag-secondary-light-color: var(--secondary);
+  --tag-info-light-color: var(--info);
+  --tag-success-light-color: var(--success);
+  --tag-warning-light-color: var(--warning);
+  --tag-danger-light-color: var(--danger);
+  --tag-purple-light-color: var(--purple);
+  --tag-yellow-light-color: var(--yellow);
+  --tag-orange-light-color: var(--orange);
+  --tag-green-light-color: var(--green);
+  --tag-red-light-color: var(--red);
+  --tag-blue-light-color: var(--blue);
+
 }
 
 .is-dark {
@@ -10,4 +35,28 @@
   --tag-default-color: var(--light-text);
   --tag-solid-bg-color: var(--night-light-10);
   --tag-solid-border-color: var(--night-light-16);
+  --tag-primary-light-bg-color: var(--primary);
+  --tag-secondary-light-bg-color: var(--secondary);
+  --tag-info-light-bg-color: var(--info);
+  --tag-success-light-bg-color: var(--success);
+  --tag-warning-light-bg-color: var(--warning);
+  --tag-danger-light-bg-color: var(--danger);
+  --tag-purple-light-bg-color: var(--purple);
+  --tag-yellow-light-bg-color: var(--yellow);
+  --tag-orange-light-bg-color: var(--orange);
+  --tag-green-light-bg-color: var(--green);
+  --tag-red-light-bg-color: var(--red);
+  --tag-blue-light-bg-color: var(--blue);
+  --tag-primary-light-color: var(--white-smoke);
+  --tag-secondary-light-color: var(--white-smoke);
+  --tag-info-light-color: var(--white-smoke);
+  --tag-success-light-color: var(--white-smoke);
+  --tag-warning-light-color: var(--white-smoke);
+  --tag-danger-light-color: var(--white-smoke);
+  --tag-purple-light-color: var(--white-smoke);
+  --tag-yellow-light-color: var(--white-smoke);
+  --tag-orange-light-color: var(--white-smoke);
+  --tag-green-light-color: var(--white-smoke);
+  --tag-red-light-color: var(--white-smoke);
+  --tag-blue-light-color: var(--white-smoke);
 }

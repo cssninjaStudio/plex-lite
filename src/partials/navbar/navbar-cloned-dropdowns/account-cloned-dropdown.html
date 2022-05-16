@@ -1,14 +1,15 @@
 <div
-  x-ref="accountcloneddrop"
-  @click.away="$refs.accountcloneddrop.classList.remove('is-active')"
+  x-data="initDropdown()"
+  @click.away="close()"
   class="dropdown-wrap is-right"
+  :class="{
+    'is-active': open,
+    '': !open
+  }"
 >
   <span class="indicator"></span>
-  <button
-    @click="$refs.accountcloneddrop.classList.add('is-active')"
-    class="dropdown-button has-image"
-  >
-    <img src="/img/avatars/3.jpg" alt="" />
+  <button @click="toggle()" class="dropdown-button has-image">
+    <img src="/img/avatars/25.jpg" alt="" />
   </button>
   <div class="drop-menu">
     <div class="menu-inner">

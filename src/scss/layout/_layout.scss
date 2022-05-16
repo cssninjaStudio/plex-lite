@@ -3,8 +3,9 @@ Main wrapper
 ========================================================================== */
 
 .plex-wrapper {
+  position: relative;
   width: calc(100% - 320px);
-  margin-left: 320px;
+  margin-#{$start-direction}: 320px;
   min-height: 100vh;
   background: var(--dashboard-bg-color);
   padding: 0 40px;
@@ -13,11 +14,11 @@ Main wrapper
 
   &.is-expanded {
     width: calc(100% - 80px);
-    margin-left: 80px;
+    margin-#{$start-direction}: 80px;
   }
 
   .wrapper-inner {
-    max-width: 1040px;
+    max-width: 1140px;
     margin: 0 auto;
 
     .dashboard-content {
@@ -34,7 +35,7 @@ Main wrapper
           stroke: var(--light-text);
           color: var(--light-text);
           stroke-width: 1.4px;
-          margin-right: 8px;
+          margin-#{$end-direction}: 8px;
         }
 
         > h3 {
@@ -46,7 +47,7 @@ Main wrapper
         }
 
         .dropdown-wrap {
-          margin-left: auto;
+          margin-#{$start-direction}: auto;
         }
       }
     }
@@ -57,7 +58,7 @@ Main wrapper
   .plex-wrapper {
     width: 100% !important;
     margin: 0 !important;
-    padding: 0 20px !important;
+    padding: 0 1rem !important;
   }
 }
 
@@ -65,56 +66,23 @@ Main wrapper
   .plex-wrapper {
     width: 100% !important;
     margin: 0 !important;
-
-    .main-card {
-      .right-side {
-        min-width: 46% !important;
-      }
-    }
-
-    .card-group {
-      flex-direction: column !important;
-
-      .left-card {
-        margin-bottom: 30px;
-        margin-right: 0 !important;
-      }
-
-      .right-card {
-        margin-left: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-    }
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .plex-wrapper {
     &:not(.is-expanded) {
-      width: calc(100% - 240px);
-      margin-left: 240px;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+  }
+}
 
-      .main-card {
-        .right-side {
-          min-width: 46% !important;
-        }
-      }
-
-      .card-group {
-        flex-direction: column !important;
-
-        .left-card {
-          margin-bottom: 16px;
-          margin-right: 0 !important;
-        }
-
-        .right-card {
-          margin-left: 0 !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-      }
+@media only screen and (min-width: 1025px) and (max-width: 1299px) and (orientation: landscape) {
+  .plex-wrapper {
+    &:not(.is-expanded) {
+      width: calc(100% - 280px);
+      margin-#{$start-direction}: 280px;
     }
   }
 }

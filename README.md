@@ -1,6 +1,6 @@
-# Plex - Alpine v3 Dashboard template
+# Plex Lite - Alpine v3 Dashboard template
 
-Plex is a bulma dashboard kit built with Bulma 0.9.3 and AlpineJS v3.x.
+Plex Lite is a bulma dashboard kit built with Bulma 0.9.3 and AlpineJS v3.x.
 
 ## Usage
 
@@ -15,7 +15,7 @@ npm run dev
 
 ## Update template colors
 
-Plex is built with Sass but relies on native CSS variables with HSL for colors. To change the template theme colors:
+Plex Lite is built with Sass but relies on native CSS variables with HSL for colors. To change the template theme colors:
 
 * Open bulma-css-vars.config.js and change the HSL value of the primary color:
 

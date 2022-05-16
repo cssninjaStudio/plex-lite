@@ -1,13 +1,14 @@
 <div
-  x-ref="notifcloneddrop"
-  @click.away="$refs.notifcloneddrop.classList.remove('is-active')"
+  x-data="initDropdown()"
+  @click.away="close()"
   class="dropdown-wrap is-right"
+  :class="{
+    'is-active': open,
+    '': !open
+  }"
 >
   <span class="indicator"></span>
-  <button
-    @click="$refs.notifcloneddrop.classList.add('is-active')"
-    class="dropdown-button"
-  >
+  <button @click="toggle()" class="dropdown-button">
     <i class="iconify" data-icon="feather:bell"></i>
   </button>
   <div class="drop-menu">

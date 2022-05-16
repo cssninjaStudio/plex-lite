@@ -1,4 +1,5 @@
 /*
+    0. Theme images
     1. Events
     2. State
     3. Border Radius
@@ -10,6 +11,62 @@
     9. Responsive Flex
     10. Overflow
 */
+
+/* ==========================================================================
+0. Theme images
+========================================================================== */
+
+.light-image {
+  display: inline-block !important;
+}
+
+.light-image-block {
+  display: block !important;
+}
+
+.dark-image-block {
+  display: none !important;
+}
+
+.dark-image {
+  display: none !important;
+}
+
+.is-dark {
+  .light-image {
+    display: none !important;
+  }
+
+  .dark-image {
+    display: inline-block !important;
+  }
+
+  .light-image-block {
+    display: none !important;
+  }
+
+  .dark-image-block {
+    display: block !important;
+  }
+
+  .inverted-filter {
+    filter: invert(1);
+  }
+
+  .inverted-filter-full {
+    filter: invert(1) brightness(0);
+  }
+}
+
+.has-background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.has-background-image-contained {
+  background-size: contain !important;
+  background-repeat: no-repeat;
+}
 
 /* ==========================================================================
 1. Events
@@ -109,8 +166,8 @@
       max-width: 100% !important;
       width: 100% !important;
       min-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      margin-#{$start-direction}: 0 !important;
+      margin-#{$end-direction}: 0 !important;
     }
   }
 }
@@ -125,8 +182,8 @@
 
 .mx-auto {
   width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-#{$start-direction}: auto !important;
+  margin-#{$end-direction}: auto !important;
 }
 
 /* ==========================================================================
@@ -169,8 +226,8 @@
   }
 
   .b-centered-tablet-p {
-    margin-left: auto;
-    margin-right: auto;
+    margin-#{$start-direction}: auto;
+    margin-#{$end-direction}: auto;
     max-width: 540px;
     text-align: center;
   }
@@ -181,8 +238,8 @@
 
   .max-w-tablet-p {
     width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-#{$start-direction}: auto !important;
+    margin-#{$end-direction}: auto !important;
   }
 
   .max-w-tp-6 {
@@ -266,6 +323,11 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .b-flex-tablet-p {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .b-columns-half-tablet-p {
     display: flex;
     flex-wrap: wrap;
@@ -301,7 +363,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .mobile-search {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
   .mobile-item {
     &.is-block {
       display: block;
@@ -313,7 +381,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .mobile-item {
     &.is-block {
       display: none !important;
@@ -322,10 +390,6 @@
     &.is-flex {
       display: none !important;
     }
-  }
-
-  .mobile-search {
-    display: none !important;
   }
 }
 

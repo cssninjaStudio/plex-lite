@@ -8,26 +8,30 @@
 ========================================================================== */
 
 .tabs {
-  ul li {
-    &.is-active {
-      a {
-        color: var(--dark-text);
-        border-color: var(--primary);
-      }
-    }
+  ul {
+    border-color: var(--tab-border-color);
 
-    &:hover:not(.is-active) {
+    li {
+      &.is-active {
+        a {
+          color: var(--title-color);
+          border-color: var(--primary);
+        }
+      }
+
+      &:hover:not(.is-active) {
+        a {
+          color: var(--tab-item-hover-color);
+          border-color: transparent;
+        }
+      }
+
       a {
-        color: var(--medium-text);
+        color: var(--tab-item-color);
+        font-family: var(--font);
+        border-width: 3px;
         border-color: transparent;
       }
-    }
-
-    a {
-      color: var(--light-text);
-      font-family: var(--font);
-      border-width: 3px;
-      border-color: transparent;
     }
   }
 }
@@ -64,11 +68,11 @@
       .tabs {
         flex-grow: 2;
         min-width: 25%;
-        margin-right: 60px;
+        margin-#{$end-direction}: 60px;
 
         ul {
           display: block;
-          text-align: left;
+          text-align: #{$start-direction};
           border-bottom-color: transparent !important;
 
           li {
@@ -76,14 +80,14 @@
 
             &.is-active {
               a {
-                border-right-color: var(--primary);
+                border-#{$end-direction}-color: var(--primary);
               }
             }
 
             a {
               display: block;
               border-bottom-color: transparent !important;
-              border-right: 3px solid #dbdbdb;
+              border-#{$end-direction}: 3px solid var(--tab-border-color);
             }
           }
         }

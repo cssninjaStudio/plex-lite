@@ -1,0 +1,53 @@
+@mixin plexCard() {
+  width: 100%;
+  background: var(--card-bg-color);
+  border-radius: 0.85rem;
+  border: 1px solid var(--card-border-color);
+}
+
+@mixin flexMedia() {
+  display: flex;
+
+  .flex-meta {
+    margin-#{$start-direction}: .5rem;
+    line-height: 1.2;
+
+    .flex-title {
+      font-family: var(--font-alt);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--title-color);
+    }
+  }
+
+  .flex-end {
+    margin-#{$start-direction}: auto;
+  }
+}
+
+@mixin flexMediaAligned() {
+  display: flex;
+  align-items: center;
+
+  .flex-meta {
+    margin-#{$start-direction}: .5rem;
+    line-height: 1.2;
+
+    .flex-title {
+      font-family: var(--font-alt);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--title-color);
+    }
+  }
+
+  .flex-end {
+    margin-#{$start-direction}: auto;
+  }
+}
+
+@mixin flexMediaCentered() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

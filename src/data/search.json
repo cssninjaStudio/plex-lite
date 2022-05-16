@@ -3,7 +3,7 @@
         "type": "user",
         "title": "Mary Smith",
         "content": "Los Angeles",
-        "photoUrl": "/img/avatars/1.jpg",
+        "photoUrl": "/img/avatars/42.jpg",
         "color": null
     },
     {
@@ -66,7 +66,7 @@
         "type": "user",
         "title": "Sally Mitchells",
         "content": "San Francisco",
-        "photoUrl": "/img/avatars/4.jpg",
+        "photoUrl": "/img/avatars/21.jpg",
         "color": null
     },
     {

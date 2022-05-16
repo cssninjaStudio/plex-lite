@@ -2,6 +2,8 @@
     1. Hamburger menu icon
 */
 
+@use "sass:math";
+
 /* ==========================================================================
 1. Hamburger menu icon
 ========================================================================== */
@@ -15,8 +17,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px;
-  height: 70px;
+  width: 4.5rem;
+  height: 4.5rem;
   cursor: pointer;
   padding: 0;
   transition: opacity 0.4s;
@@ -48,12 +50,12 @@
       visibility: hidden;
       width: 1px;
       height: 3px;
-      left: 70%;
+      #{$start-direction}: 70%;
     }
 
     &.active > div > i.icon-line-bottom {
       margin: -2px 0 0 -10px;
-      left: 50%;
+      #{$start-direction}: 50%;
       top: 12px;
 
       /*transform*/
@@ -66,7 +68,7 @@
 
     &.active > div > i.icon-line-top {
       margin: -2px 0 0 -10px;
-      left: 50%;
+      #{$start-direction}: 50%;
       top: 12px;
 
       /*transform*/
@@ -84,7 +86,7 @@
     height: 2px;
     background: var(--light-text);
     margin: -1px 0 0 -10px;
-    left: 50%;
+    #{$start-direction}: 50%;
     top: 11px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -98,7 +100,7 @@
     height: 2px;
     background: var(--light-text);
     margin: -3px 0 0 -10px;
-    left: 50%;
+    #{$start-direction}: 50%;
     top: 7px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -112,11 +114,286 @@
     height: 2px;
     background: var(--light-text);
     margin: 2px 0 0 -10px;
-    left: 50%;
+    #{$start-direction}: 50%;
     top: 14px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+  }
+}
+
+
+/* ==========================================================================
+Menu Icon
+========================================================================== */
+
+$menu-icon-size: 1.6rem;
+$menu-icon-dash-width: 0.75em; //em(4.5rem, 6rem)
+$menu-icon-dash-width-sliced: 0.35em;
+$menu-icon-dash-height: 0.05em; //em(0.3rem, 6rem)
+$menu-icon-dash-gutter: $menu-icon-dash-height * 5;
+$menu-icon-dash-color: var(--light-text);
+$menu-icon-dash-border-radius: 0;
+
+%menu-dash {
+  display: block;
+  position: absolute;
+  top: 50%;
+  #{$start-direction}: math.div((1em - $menu-icon-dash-width), 2); // center X
+  background-color: $menu-icon-dash-color;
+  width: $menu-icon-dash-width;
+  height: $menu-icon-dash-height;
+  border-radius: $menu-icon-dash-border-radius;
+}
+
+.menu-icon {
+  font-size: $menu-icon-size;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  outline: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  cursor: pointer;
+
+  > * {
+    pointer-events: none !important;
+  }
+
+  span {
+    @extend %menu-dash;
+
+    margin-top: math.div($menu-icon-dash-height, 2);
+  }
+
+  &:before {
+    content: "";
+
+    @extend %menu-dash;
+
+    width: $menu-icon-dash-width-sliced;
+    margin-top: -$menu-icon-dash-gutter + math.div($menu-icon-dash-height, 2);
+  }
+
+  &:after {
+    content: "";
+
+    @extend %menu-dash;
+
+    margin-top: $menu-icon-dash-gutter + math.div($menu-icon-dash-height, -2);
+  }
+}
+
+.v-1 {
+  &:before,
+  &:after,
+  span {
+    transition: 0.25s ease-in-out;
+  }
+
+  &.is-open {
+    &:before {
+      transform: rotate(135deg);
+      margin-top: math.div($menu-icon-dash-height, -2);
+    }
+
+    &:after {
+      transform: rotate(-135deg);
+      margin-top: math.div($menu-icon-dash-height, -2);
+    }
+
+    span {
+      opacity: 0;
+      transform: translateX(150%);
+    }
+  }
+}
+
+.v-2 {
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  span {
+    transition: 0.25s ease;
+
+    &:before,
+    &:after {
+      @extend %menu-dash;
+
+      content: "";
+      transition: 0.25s ease;
+      top: 0;
+      #{$start-direction}: 0;
+    }
+
+    &:before {
+      transform: translateY(-$menu-icon-dash-gutter);
+    }
+
+    &:after {
+      transform: translateY($menu-icon-dash-gutter);
+    }
+  }
+
+  &.is-open {
+    span {
+      transform: rotate(45deg);
+
+      &:before,
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.v-3 {
+  &:before,
+  &:after {
+    transition: 0.2s ease 0.2s;
+  }
+
+  &:after {
+    #{$start-direction}: auto;
+    #{$end-direction}: math.div((1em - $menu-icon-dash-width), 2);
+  }
+
+  span {
+    transition: 0.2s;
+
+    &:before {
+      @extend %menu-dash;
+
+      content: "";
+      transition: inherit;
+      #{$start-direction}: 0;
+      top: 0;
+    }
+  }
+
+  &.is-open {
+    &:before,
+    &:after {
+      transition: 0.2s ease;
+      width: 0;
+    }
+
+    span {
+      transform: rotate(45deg);
+      transition: 0.2s ease 0.2s;
+
+      &:before {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.v-4 {
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  span {
+    transition: 0.25s ease;
+
+    &:before,
+    &:after {
+      @extend %menu-dash;
+
+      content: "";
+      top: 0;
+      #{$start-direction}: 0;
+      transition: inherit;
+      margin: 0;
+    }
+
+    &:before {
+      transform: translateY(-$menu-icon-dash-gutter);
+    }
+
+    &:after {
+      transform: translateY($menu-icon-dash-gutter);
+    }
+  }
+
+  &.is-open {
+    span {
+      transform: rotate(180deg);
+
+      &:before,
+      &:after {
+        width: math.div($menu-icon-dash-width, 2);
+        #{$start-direction}: 0.02em;
+      }
+
+      &:before {
+        transform: rotate(-45deg) translateY(-0.17em);
+      }
+
+      &:after {
+        transform: rotate(45deg) translateY(0.17em);
+      }
+    }
+  }
+}
+
+.v-5 {
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  span {
+    transition: 0.25s ease;
+
+    &:before,
+    &:after {
+      @extend %menu-dash;
+
+      content: "";
+      top: 0;
+      #{$end-direction}: 0;
+      #{$start-direction}: auto;
+      transition: inherit;
+      margin: 0;
+    }
+
+    &:before {
+      transform: translateY(-$menu-icon-dash-gutter);
+    }
+
+    &:after {
+      transform: translateY($menu-icon-dash-gutter);
+    }
+  }
+
+  &.is-open {
+    span {
+      transform: rotate(-180deg);
+
+      &:before,
+      &:after {
+        width: math.div($menu-icon-dash-width, 2);
+        #{$end-direction}: 0.02em;
+      }
+
+      &:before {
+        transform: rotate(-45deg) translateY(0.17em);
+      }
+
+      &:after {
+        transform: rotate(45deg) translateY(-0.17em);
+      }
+    }
   }
 }

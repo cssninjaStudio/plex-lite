@@ -1,0 +1,81 @@
+.circles-widget {
+  @include plexCard();
+
+  padding: 1.5rem;
+
+  .statistics {
+    display: flex;
+
+    .statistic {
+      flex: 1 1 0px;
+      //text-align: center;
+
+      .circle-container {
+        position: relative;
+
+        .circle-icon {
+          position: absolute;
+          top: 50%;
+          #{$start-direction}: 0%;
+          transform: translate(35%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 28px;
+          width: 28px;
+          min-width: 28px;
+          color: var(--title-color);
+
+          span {
+            position: relative;
+            top: -2px;
+            #{$end-direction}: -2px;
+            font-family: var(--font);
+            font-weight: 700;
+            color: var(--title-color);
+            font-size: 0.8rem;
+          }
+        }
+
+        .circle-chart-background {
+          stroke: var(--circle-chart-bg-color);
+        }
+    
+        .circle-chart-circle {
+          stroke: currentColor;
+          transition: stroke .3s;
+        }
+      }
+
+      > span {
+        display: block;
+        font-family: var(--font-alt);
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: var(--title-color);
+        padding: 0.5rem 0;
+      }
+    }
+  }
+
+  > p {
+    font-size: .9rem;
+    font-family: var(--font);
+    color: var(--light-text);
+  }
+
+  &.is-centered {
+    .statistics {
+      .statistic {
+        text-align: center;
+
+        .circle-container {
+          .circle-icon {
+            #{$start-direction}: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}

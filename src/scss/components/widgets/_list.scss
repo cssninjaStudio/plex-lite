@@ -1,0 +1,57 @@
+.list-widget {
+  @include plexCard();
+
+  padding: 1.5rem;
+
+  .inner-list {
+    li {
+      .widget-list-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+      }
+
+      .list-item-data {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+
+        
+
+        .item-info {
+          max-width: 230px;
+
+          span {
+            display: block;
+
+            &.item-title {
+              color: var(--title-color);
+              font-size: 0.8rem;
+              font-family: var(--font-alt);
+              font-weight: 600;
+            }
+
+            &:nth-child(2) {
+              font-family: var(--font);
+              font-size: 0.75rem;
+              color: var(--light-text);
+            }
+          }
+        }
+
+        .item-action {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          margin-#{$start-direction}: auto;
+
+          .button {
+            height: 36px;
+            font-size: .85rem;
+          }
+        }
+      }
+    }
+  }
+}

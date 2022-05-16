@@ -42,16 +42,16 @@
     display: block;
     min-width: 160px;
     max-width: 160px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-#{$start-direction}: auto;
+    margin-#{$end-direction}: auto;
   }
 
   &.subtitle-shape {
     display: block;
     min-width: 80px;
     max-width: 80px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-#{$start-direction}: auto;
+    margin-#{$end-direction}: auto;
   }
 
   &.social-shape {
@@ -65,8 +65,8 @@
     margin: 0 0.15rem;
   }
 
-  &.is-left {
-    margin-left: 0 !important;
+  &.is-#{$start-direction} {
+    margin-#{$start-direction}: 0 !important;
   }
 }
 
@@ -79,14 +79,14 @@
   background: var(--placeload-nuance-from);
   background: -webkit-gradient(
     linear,
-    left top,
-    right top,
+    #{$start-direction} top,
+    #{$end-direction} top,
     color-stop(8%, var(--placeload-nuance-from)),
     color-stop(18%, var(--placeload-nuance-to)),
     color-stop(33%, var(--placeload-nuance-from))
   );
   background: linear-gradient(
-    to right,
+    to #{$end-direction},
     var(--placeload-nuance-from) 8%,
     var(--placeload-nuance-to) 18%,
     var(--placeload-nuance-from) 33%
@@ -115,14 +115,14 @@
     background: var(--placeload-dark-nuance-from);
     background: -webkit-gradient(
       linear,
-      left top,
-      right top,
+      #{$start-direction} top,
+      #{$end-direction} top,
       color-stop(8%, var(--placeload-dark-nuance-from)),
       color-stop(18%, var(--placeload-dark-nuance-to)),
       color-stop(33%, var(--placeload-dark-nuance-from))
     );
     background: linear-gradient(
-      to right,
+      to #{$end-direction},
       var(--placeload-dark-nuance-from) 8%,
       var(--placeload-dark-nuance-to) 18%,
       var(--placeload-dark-nuance-from) 33%

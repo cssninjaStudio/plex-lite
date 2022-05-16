@@ -80,7 +80,7 @@ $shade-variants: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20,
   --info-shadow-to: hsl(var(--info-h) var(--info-s) var(--info-l) / 20%);
 
   // info - light shades
-  @each $shade in 20, 24, 45 {
+  @each $shade in 20, 24, 45, 48 {
     --info-light-#{$shade}: hsl(
       var(--info-h) var(--info-s) calc(var(--info-l) + #{$shade}%)
     );

@@ -1,0 +1,96 @@
+.profile-widget {
+  @include plexCard();
+
+  overflow: hidden;
+
+  .widget-header {
+    width: 100%;
+    background: var(--wrap-muted-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+
+    .info-block {
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 90px;
+        border-radius: 50%;
+        border: 3px solid var(--wrap-bg-color);
+      }
+
+      .name {
+        font-family: var(--font-alt);
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--title-color);
+      }
+
+      .role {
+        font-family: var(--font);
+        font-size: 0.85rem;
+        color: var(--medium-text);
+      }
+    }
+  }
+
+  .widget-stats {
+    padding: 1.5rem;
+  }
+
+  .inline-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    .stats-item {
+      font-family: var(--font);
+
+      .stat-name {
+        font-weight: 400;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--light-text);
+      }
+
+      .stat-data {
+        color: var(--title-color);
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &.is-skewed {
+    .widget-header {
+      transform: skewY(-5deg);
+      margin-top: -1.75rem;
+      margin-bottom: 1rem;
+
+      .info-block {
+        position: relative;
+        top: 1rem;
+        padding-top: .85rem;
+        transform: skewY(5deg);
+      }
+    }
+  }
+
+  &.is-inverted {
+    .widget-header {
+      .info-block {
+        .name {
+          color: var(--white-smoke);
+        }
+
+        .role {
+          color: var(--white-smoke);
+          opacity: .7;
+        }
+      }
+    }
+  }
+}

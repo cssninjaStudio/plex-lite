@@ -1,35 +1,43 @@
-<div x-ref="activitydrop" @click.away="$refs.activitydrop.classList.remove('is-active')" class="dropdown-wrap is-right">
-    <button @click="$refs.activitydrop.classList.add('is-active')" class="dropdown-button">
-        <i data-feather="more-horizontal"></i>
-    </button>
-    <div class="drop-menu">
-        <div class="menu-inner">
-            <div class="menu-header">
-                <h3>Activity</h3>
-            </div>
-            <div class="options-items">
-                <a class="options-item">
-                    <i data-feather="activity"></i>
-                    <div class="option-content">
-                        <span>All Activity</span>
-                        <span>See all activity</span>
-                    </div>
-                </a>
-                <a class="options-item">
-                    <i data-feather="clock"></i>
-                    <div class="option-content">
-                        <span>This week</span>
-                        <span>View last week activity</span>
-                    </div>
-                </a>
-                <a class="options-item">
-                    <i data-feather="users"></i>
-                    <div class="option-content">
-                        <span>By Team</span>
-                        <span>View team based activity</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+<div
+  x-data="initDropdown()"
+  @click.away="close()"
+  class="dropdown-wrap is-right"
+  :class="{
+    'is-active': open,
+    '': !open
+  }"
+>
+  <button @click="toggle()" class="dropdown-button">
+    <i class="iconify" data-icon="feather:more-horizontal"></i>
+  </button>
+  <div class="drop-menu">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <h3>Activity</h3>
+      </div>
+      <div class="options-items">
+        <a class="options-item">
+            <i class="iconify" data-icon="ph:heartbeat-duotone"></i>
+          <div class="option-content">
+            <span>All Activity</span>
+            <span>See all activity</span>
+          </div>
+        </a>
+        <a class="options-item">
+            <i class="iconify" data-icon="ph:calendar-check-duotone"></i>
+          <div class="option-content">
+            <span>This week</span>
+            <span>View last week activity</span>
+          </div>
+        </a>
+        <a class="options-item">
+            <i class="iconify" data-icon="ph:circles-three-plus-duotone"></i>
+          <div class="option-content">
+            <span>By Team</span>
+            <span>View team based activity</span>
+          </div>
+        </a>
+      </div>
     </div>
+  </div>
 </div>

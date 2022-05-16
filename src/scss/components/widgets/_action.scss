@@ -1,0 +1,28 @@
+.action-widget {
+  @include plexCard();
+
+  padding: 2.25rem;
+
+  > img {
+    display: block;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+
+  .widget-content {
+    text-align: center;
+    padding: 1rem 0;
+
+    p {
+      font-family: var(--font);
+      font-size: .85rem;
+      color: var(--light-text);
+    }
+  }
+
+  .buttons {
+    .button {
+      min-width: 110px;
+    }
+  }
+}

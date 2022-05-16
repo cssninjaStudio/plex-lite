@@ -18,17 +18,16 @@ Alpine.persistedStore("app", {
 Alpine.start()
 
 import { env } from "./libs/utils/constants";
-import { switchDemoImages, insertBgImages } from "./libs/utils/utils";
-import { initPageLoader } from './libs/components/pageloader/pageloader';
+import { insertBgImages } from "./libs/utils/utils";
+import { initLazyLoading } from './libs/utils/lazyload';
 import "./libs/components";
 import "./libs/pages";
 
-const showPageloader = initPageLoader();
-
 document.onreadystatechange = function () {
   if (document.readyState == "complete") {
-    //Switch demo images
-    const changeImages = switchDemoImages(env);
+
+    //Lazy Loading
+    const lazy = initLazyLoading();
 
     //Switch backgrounds
     const changeBackgrounds = insertBgImages();

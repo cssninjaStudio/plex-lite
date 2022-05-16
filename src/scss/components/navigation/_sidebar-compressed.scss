@@ -5,14 +5,14 @@ Collapsed sidebar
 .plex-compressed-sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  #{$start-direction}: 0;
   width: 80px;
   height: 100%;
   background: var(--sidebar-default-bg-color);
-  border-right: 1px solid var(--sidebar-default-border-color);
+  border-#{$end-direction}: 1px solid var(--sidebar-default-border-color);
   transform: translateX(0);
   transition: all 0.3s;
-  z-index: 92;
+  z-index: 91;
 
   &.is-inactive {
     transform: translateX(-100%);
@@ -31,7 +31,10 @@ Collapsed sidebar
       font-family: "Pacifico", sans-serif;
       font-weight: bold;
       font-size: 1.6rem;
-      color: var(--title-color);
+      
+      a {
+        color: var(--title-color);
+      }
     }
   }
 
@@ -41,7 +44,7 @@ Collapsed sidebar
     .compressed-naver {
       position: absolute;
       top: 0;
-      right: 0;
+      #{$end-direction}: 0;
       height: 60px;
       width: 2px;
       border-radius: 4px;
@@ -101,6 +104,18 @@ Collapsed sidebar
       &:nth-child(6) {
         ~ .compressed-naver {
           margin-top: 300px;
+        }
+      }
+
+      &:nth-child(7) {
+        ~ .compressed-naver {
+          margin-top: 360px;
+        }
+      }
+
+      &:nth-child(8) {
+        ~ .compressed-naver {
+          margin-top: 420px;
         }
       }
     }

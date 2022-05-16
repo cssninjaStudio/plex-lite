@@ -1,5 +1,6 @@
 /*
     1. Button base
+    2. Icon button
 */
 
 /* ==========================================================================
@@ -14,6 +15,10 @@
   background: var(--button-base-bg-color);
   transition: all 0.3s;
 
+  &:focus {
+    box-shadow: var(--light-box-shadow);
+  }
+
   &.is-long-1 {
     min-width: 7rem;
   }
@@ -27,19 +32,28 @@
   }
 
   &.is-big {
-    height: 48px;
-    min-width: 200px;
+    height: 52px;
   }
 
   &.is-solid {
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:hover {
+      border-color: var(--button-base-border-color-hover);
+      color: var(--button-base-color);
+    }
+
+    &:focus,
     &.raised:hover,
     &.is-raised {
+      border-color: var(--button-base-border-color);
       box-shadow: var(--light-box-shadow);
     }
+  }
+
+  &.is-bold {
+    font-weight: 500;
   }
 
   &:not(.is-rounded) {
@@ -49,14 +63,15 @@
   &.is-primary {
     background: var(--button-primary-bg-color);
     border: 1px solid var(--button-primary-border-color);
-    color: var(--white) !important;
+    color: var(--white);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--primary-box-shadow);
+      border-color: var(--primary);
+      box-shadow: var(--primary-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -77,11 +92,12 @@
     color: var(--button-secondary-color);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--secondary-box-shadow);
+      border-color: var(--secondary);
+      box-shadow: var(--secondary-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -102,11 +118,12 @@
     color: var(--button-info-color);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--info-box-shadow);
+      border-color: var(--info);
+      box-shadow: var(--info-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -127,11 +144,12 @@
     color: var(--button-success-color);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--success-box-shadow);
+      border-color: var(--success);
+      box-shadow: var(--success-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -152,11 +170,12 @@
     color: var(--button-warning-color);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--warning-box-shadow);
+      border-color: var(--warning);
+      box-shadow: var(--warning-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -177,11 +196,12 @@
     color: var(--button-danger-color);
     line-height: 1;
     font-size: 0.9rem;
-    font-weight: 500;
 
+    &:focus,
     &.raised:hover,
     &.is-raised {
-      box-shadow: var(--danger-box-shadow);
+      border-color: var(--danger);
+      box-shadow: var(--danger-box-shadow) !important;
     }
 
     &.is-outlined {
@@ -193,6 +213,169 @@
         background: var(--button-danger-bg-color);
         color: var(--white);
       }
+    }
+  }
+
+  &.is-translucid {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--white) !important;
+    line-height: 1;
+    font-size: 0.9rem;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      #{$start-direction}: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 0.75rem;
+      opacity: 0.2;
+      background: var(--white-smoke);
+      border: 1px solid var(--white-smoke);
+      transition: opacity 0.3s;
+    }
+
+    &:focus::after {
+      border-color: var(--white-smoke);
+    }
+
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+}
+
+/* ==========================================================================
+2. Icon button
+========================================================================== */
+
+.icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 44px;
+  min-width: 44px;
+  font-size: 0.9rem;
+  padding: 0;
+  border: 1px solid var(--button-base-border-color);
+  background: var(--button-base-bg-color);
+  transition: all 0.3s;
+
+  .iconify,
+  svg,
+  path {
+    color: var(--title-color);
+  }
+
+  &.is-rounded {
+    border-radius: 50%;
+  }
+
+  &.is-squared {
+    border-radius: 0.25rem;
+  }
+
+  &.is-curved {
+    border-radius: 0.65rem;
+  }
+
+  &.is-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--primary-box-shadow);
+    }
+  }
+
+  &.is-secondary {
+    background: var(--secondary);
+    border-color: var(--secondary);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--secondary-box-shadow);
+    }
+  }
+
+  &.is-info {
+    background: var(--info);
+    border-color: var(--info);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--info-box-shadow);
+    }
+  }
+
+  &.is-success {
+    background: var(--success);
+    border-color: var(--success);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--success-box-shadow);
+    }
+  }
+
+  &.is-warning {
+    background: var(--warning);
+    border-color: var(--warning);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--warning-box-shadow);
+    }
+  }
+
+  &.is-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+
+    .iconify,
+    svg,
+    path {
+      color: var(--white-smoke);
+    }
+
+    &.raised:hover,
+    &.is-raised {
+      box-shadow: var(--danger-box-shadow);
     }
   }
 }

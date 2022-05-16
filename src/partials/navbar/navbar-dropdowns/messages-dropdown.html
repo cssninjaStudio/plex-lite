@@ -1,14 +1,15 @@
 <div
-  x-ref="messagesdrop"
-  @click.away="$refs.messagesdrop.classList.remove('is-active')"
+  x-data="initDropdown()"
+  @click.away="close()"
   class="dropdown-wrap is-right"
+  :class="{
+    'is-active': open,
+    '': !open
+  }"
 >
   <span class="indicator"></span>
-  <button
-    @click="$refs.messagesdrop.classList.add('is-active')"
-    class="dropdown-button"
-  >
-  <i class="iconify" data-icon="feather:mail"></i>
+  <button @click="toggle()" class="dropdown-button">
+    <i class="iconify" data-icon="feather:mail"></i>
   </button>
   <div class="drop-menu">
     <div class="menu-inner">

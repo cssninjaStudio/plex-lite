@@ -1,3 +1,4 @@
-import { initDashboard } from './dashboard/dashboard';
+import { initAccountingDashboard } from './accounting/accounting';
 
-window.initDashboard = initDashboard;
+window.initAccountingDashboard = initAccountingDashboard;
+
