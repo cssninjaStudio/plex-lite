@@ -38,10 +38,6 @@
     &:not(.is-navbar) {
       &.active > div.rotate {
         /*transform*/
-        -webkit-transform: rotate(90deg);
-        -moz-transform: translate(0px, 0px) rotate(90deg);
-        -ms-transform: translate(0px, 0px) rotate(90deg);
-        -o-transform: translate(0px, 0px) rotate(90deg);
         transform: translate(0px, 0px) rotate(90deg);
       }
     }
@@ -59,10 +55,6 @@
       top: 12px;
 
       /*transform*/
-      -webkit-transform: rotate(135deg);
-      -moz-transform: translate(0px, 0px) rotate(135deg);
-      -ms-transform: translate(0px, 0px) rotate(135deg);
-      -o-transform: translate(0px, 0px) rotate(135deg);
       transform: translate(0px, 0px) rotate(135deg);
     }
 
@@ -72,10 +64,6 @@
       top: 12px;
 
       /*transform*/
-      -webkit-transform: rotate(45deg);
-      -moz-transform: translate(0px, 0px) rotate(45deg);
-      -ms-transform: translate(0px, 0px) rotate(45deg);
-      -o-transform: translate(0px, 0px) rotate(45deg);
       transform: translate(0px, 0px) rotate(45deg);
     }
   }
@@ -88,9 +76,6 @@
     margin: -1px 0 0 -10px;
     #{$start-direction}: 50%;
     top: 11px;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
   }
 
@@ -102,9 +87,6 @@
     margin: -3px 0 0 -10px;
     #{$start-direction}: 50%;
     top: 7px;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
   }
 
@@ -116,9 +98,6 @@
     margin: 2px 0 0 -10px;
     #{$start-direction}: 50%;
     top: 14px;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
   }
 }
@@ -210,7 +189,7 @@ $menu-icon-dash-border-radius: 0;
 
     span {
       opacity: 0;
-      transform: translateX(150%);
+      transform: translateX(calc(150% * #{$transform-direction}));
     }
   }
 }
@@ -388,11 +367,11 @@ $menu-icon-dash-border-radius: 0;
       }
 
       &:before {
-        transform: rotate(-45deg) translateY(0.17em);
+        transform: rotate(calc(-45deg * #{$transform-direction})) translateY(0.17em);
       }
 
       &:after {
-        transform: rotate(45deg) translateY(-0.17em);
+        transform: rotate(calc(45deg * #{$transform-direction})) translateY(-0.17em);
       }
     }
   }

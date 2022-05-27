@@ -46,7 +46,7 @@ function setupBulma() {
 //Compile Scss code
 function compileSCSS() {
   console.log("\n\t" + logSymbols.info, "Compiling App SCSS..\n");
-  return src(['src/scss/main.scss'])
+  return src(['src/scss/main.scss', 'src/scss/main-rtl.scss'])
     .pipe(sass({
       outputStyle: 'compressed',
       sourceComments: 'map',

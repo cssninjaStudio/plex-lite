@@ -15,7 +15,7 @@ Collapsed sidebar
   z-index: 91;
 
   &.is-inactive {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% * #{$transform-direction}));
   }
 
   .compressed-header {

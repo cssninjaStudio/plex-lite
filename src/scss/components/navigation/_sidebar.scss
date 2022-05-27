@@ -15,7 +15,7 @@ Expanded sidebar
   transition: all 0.3s;
 
   &.is-inactive {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% * #{$transform-direction}));
   }
 
   .sidebar-header {
@@ -202,7 +202,7 @@ Expanded sidebar
 @media (max-width: 767px) {
   .plex-sidebar,
   .plex-sidebar.is-inactive {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% * #{$transform-direction}));
 
     &.is-mobile-active {
       transform: translateX(0);
@@ -213,7 +213,7 @@ Expanded sidebar
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .plex-sidebar,
   .plex-sidebar.is-inactive {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% * #{$transform-direction}));
 
     &.is-mobile-active {
       transform: translateX(0);
@@ -224,7 +224,7 @@ Expanded sidebar
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .plex-sidebar,
   .plex-sidebar.is-inactive {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% * #{$transform-direction}));
 
     &.is-mobile-active {
       transform: translateX(0);
