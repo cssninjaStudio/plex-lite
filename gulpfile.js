@@ -1,24 +1,23 @@
-const { src, dest, task, watch, series, parallel } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const del = require('del');
 const options = require("./config");
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass')(require('sass'));
+const sassCompiler = require('sass')
+const sass = require('gulp-sass')(sassCompiler);
 const bourbon = require('node-bourbon').includePaths;
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
-const cleanCSS = require('gulp-clean-css');
-const purgecss = require('gulp-purgecss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
+const replace = require('gulp-replace');
 const panini = require('panini');
+const packageJson = require('./package.json')
 
 const browserify = require("browserify");
 const babelify = require("babelify");
 const source = require("vinyl-source-stream");
 const nodepath = 'node_modules/';
 
-sass.compiler = require('sass');
+sass.compiler = sassCompiler;
 
 //Note : Webp still not supported in major browsers including forefox
 //const webp = require('gulp-webp'); //For converting images to WebP format
@@ -31,21 +30,23 @@ function livePreview(done) {
     server: {
       baseDir: options.paths.dist.base
     },
-    port: options.config.port || 5000
+    port: options.config.port || 5000,
+    ui: false,
+    open: false,
   });
   done();
 }
 
 //Copy latest installed Bulma
 function setupBulma() {
-  console.log("\n\t" + logSymbols.info, "Installing Bulma Files..\n");
+  console.log(logSymbols.info, "Installing Bulma Files..");
   return src([nodepath + 'bulma/*.sass', nodepath + 'bulma/**/*.sass'])
     .pipe(dest('src/sass/'));
 }
 
 //Compile Scss code
 function compileSCSS() {
-  console.log("\n\t" + logSymbols.info, "Compiling App SCSS..\n");
+  console.log(logSymbols.info, "Compiling App SCSS..");
   return src(['src/scss/main.scss', 'src/scss/main-rtl.scss'])
     .pipe(sass({
       outputStyle: 'compressed',
@@ -60,9 +61,10 @@ function compileSCSS() {
 
 //Compile HTML partials with Panini
 function compileHTML() {
-  console.log("\n\t" + logSymbols.info, "Compiling HTML..\n");
+  console.log(logSymbols.info, "Compiling HTML..");
   panini.refresh();
   return src('src/pages/**/*.html')
+    .pipe(replace('{{PACKAGE_VERSION}}', packageJson.version))
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -76,7 +78,7 @@ function compileHTML() {
 
 //Concat CSS Plugins
 function concatCssPlugins() {
-  console.log("\n\t" + logSymbols.info, "Compiling Plugin styles..\n");
+  console.log(logSymbols.info, "Compiling Plugin styles..");
   return src([
     nodepath + 'simplebar/dist/simplebar.min.css',
     nodepath + 'plyr/dist/plyr.css',
@@ -91,25 +93,19 @@ function concatCssPlugins() {
 
 //Reset Panini Cache
 function resetPages(done) {
-  console.log("\n\t" + logSymbols.info, "Clearing Panini Cache..\n");
+  console.log(logSymbols.info, "Clearing Panini Cache..");
   panini.refresh();
   done();
 }
 
 //Triggers Browser reload
 function previewReload(done) {
-  console.log("\n\t" + logSymbols.info, "Reloading Browser Preview.\n");
+  console.log(logSymbols.info, "Reloading Browser Preview.");
   browserSync.reload();
   done();
 }
 
-//Development Tasks
-function devHTML() {
-  return src(`${options.paths.src.base}/**/*.html`).pipe(dest(options.paths.dist.base));
-}
-
-//Optimize images
-function devImages() {
+function copyImages() {
   return src(`${options.paths.src.img}/**/*`).pipe(dest(options.paths.dist.img));
 }
 
@@ -133,7 +129,7 @@ function javascriptBuild() {
 
 //Copy data files
 function copyData() {
-  console.log("\n\t" + logSymbols.info, "Copying data files..\n");
+  console.log(logSymbols.info, "Copying data files..");
   return src([
     'src/data/**/*',
   ])
@@ -146,12 +142,12 @@ function watchFiles() {
   watch(`${options.paths.src.base}/**/*.html`, series(compileHTML, previewReload));
   watch(['src/scss/**/*', 'src/scss/*'], compileSCSS);
   watch(`${options.paths.src.js}/**/*.js`, series(javascriptBuild, previewReload));
-  watch(`${options.paths.src.img}/**/*`, series(devImages, previewReload));
-  console.log("\n\t" + logSymbols.info, "Watching for Changes..\n");
+  watch(`${options.paths.src.img}/**/*`, series(copyImages, previewReload));
+  console.log(logSymbols.info, "Watching for Changes..");
 }
 
 function devClean() {
-  console.log("\n\t" + logSymbols.info, "Cleaning dist folder for fresh start.\n");
+  console.log(logSymbols.info, "Cleaning dist folder for fresh start.");
   return del([options.paths.dist.base]);
 }
 
@@ -163,7 +159,7 @@ const buildTasks = [
     concatCssPlugins, 
     compileSCSS, 
     javascriptBuild, 
-    devImages, 
+    copyImages, 
     compileHTML
   ),
 ]

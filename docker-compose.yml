@@ -1,23 +1,22 @@
 version: '3.7'
 
 services:
-  plex-demo:
-    build:
-      context: .
+  plex-lite-demo:
+    image: digisquad/cssninja.plex-lite-demo:latest
     networks:
       - cssninja-services
-    restart: '${MOEBIUS_DEMO_RESTART:-no}'
+    restart: 'unless-stopped'
     labels:
       traefik.enable: true
       traefik.docker.network: 'cssninja-services'
-      traefik.http.routers.plex-demo.entrypoints: 'http'
-      traefik.http.routers.plex-demo.rule: 'Host(`plex.${HOST:-127.0.0.1.nip.io}`)'
-      traefik.http.routers.plex-demo.middlewares: 'https-redirect@file'
-      traefik.http.services.plex-demo-https.loadbalancer.server.port: 8080
-      traefik.http.routers.plex-demo-https.rule: 'Host(`plex.${HOST:-127.0.0.1.nip.io}`)'
-      traefik.http.routers.plex-demo-https.tls: true
-      traefik.http.routers.plex-demo-https.entrypoints: 'https'
-      traefik.http.routers.plex-demo-https.tls.certresolver: 'http'
+      traefik.http.routers.plex-lite-demo.entrypoints: 'http'
+      traefik.http.routers.plex-lite-demo.rule: 'Host(`plex-lite.${HOST:-127.0.0.1.nip.io}`)'
+      traefik.http.routers.plex-lite-demo.middlewares: 'https-redirect@file'
+      traefik.http.services.plex-lite-demo-https.loadbalancer.server.port: 8080
+      traefik.http.routers.plex-lite-demo-https.rule: 'Host(`plex-lite.${HOST:-127.0.0.1.nip.io}`)'
+      traefik.http.routers.plex-lite-demo-https.tls: true
+      traefik.http.routers.plex-lite-demo-https.entrypoints: 'https'
+      traefik.http.routers.plex-lite-demo-https.tls.certresolver: 'http'
 
 networks:
   cssninja-services:

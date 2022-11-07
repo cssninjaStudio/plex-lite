@@ -6,57 +6,34 @@ Plex Lite is a bulma dashboard kit built with Bulma 0.9.x and AlpineJS v3.x. Ple
 
 ## ✌️ preview
 
-Check out the live demo (full product) by clicking [here](https://plex.cssninja.io/). 
+Check out the live demo by clicking [here](https://plex-lite.cssninja.io/). 
 Plex is built with [Bulma](https://bulma.io) and [Alpine JS](https://github.com/alpinejs/alpine).
 
 ## 👍 Features
 
-* Gulp 4 and nodejs 12.13.0 (minimum)
-* Bulma 0.9.3
+* Gulp 4 and nodejs 16.x (minimum)
+* Bulma 0.9.x
 * ES6 support
-* Alpine v3
+* Alpine v3.x
 
 ## 👌 Usage
 
 1. Install Dev Depedencies
 
 ```sh
-yarn install
+pnpm i
 ```
 
 2. To start development server
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
-## 🍬 Update template colors
+3. To build the project
 
-Plex Lite is built with Sass but relies on native CSS variables with HSL for colors. To change the template theme colors:
-
-* Open bulma-css-vars.config.js and change the HSL value of the primary color:
-
-```
-primary: hsl(337, 78, 57),
-```
-
-* Then, edit the value of the primary, secondary and accent colors inside `src/scss/css-variables/colors.scss`:
-
-```
-// primary HSL (#e73c7d) // hsl(337, 78%, 57%)
-@include colorHsl("primary", 337, 78%, 57%);
-
-// secondary HSL (#7938f4) // hsl(261, 90%, 59%)
-@include colorHsl("secondary", 261, 90%, 59%);
-
-// accent HSL (#3bf486) // hsl(144, 89%, 59%)
-@include colorHsl("accent", 144, 89%, 59%);
-```
-
-* Once you're done, run the following command in your terminal:
-
-```
-yarn build:update-bulma-colors
+```sh
+pnpm build
 ```
 
 ## 🍔 Issues
@@ -71,9 +48,7 @@ If you've found an issue or a bug, you can report it in the issues section of th
 
 ## 🎉 More
 
-You liked Plex? Check also our Envato portfolio [Css Ninja on Themeforest](https://themeforest.net/user/cssninjastudio/portfolio).
-
-Find more premium bulma templates on [Css Ninja](https://cssninja.io/).
+Find more premium webapp and website templates on [Css Ninja](https://cssninja.io/).
 
 ## 🚀 About Us
 
