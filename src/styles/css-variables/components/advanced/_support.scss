@@ -1,0 +1,9 @@
+:root {
+  --chrono-color: #b0bdc4;
+  --stack-color: var(--widget-grey-dark-8);
+}
+
+.is-dark {
+  --chrono-color: var(--night-light-30);
+  --stack-color: var(--night-light-30);
+}

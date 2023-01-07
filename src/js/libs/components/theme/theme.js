@@ -20,18 +20,18 @@ export function initTheme() {
     },
 
     toggleMobileMenu() {
-      if (this.$store.app.isMobileActive === false) {
-        this.$store.app.isMobileActive = true;
+      if (this.$store.app.isSidebarOpenedMobile === false) {
+        this.$store.app.isSidebarOpenedMobile = true;
       } else {
-        this.$store.app.isMobileActive = false;
+        this.$store.app.isSidebarOpenedMobile = false;
       }
-      console.log("clicked mobile", this.$store.app.isMobileActive);
+      console.log("clicked mobile", this.$store.app.isSidebarOpenedMobile);
     },
 
     searchData(e) {
       let searchTerm = e.target.value;
       let selector = e.target.getAttribute("data-selector");
-      const batch = searchJSON(searchTerm, "/data/search.json", selector);
+      const batch = searchJSON(searchTerm, "/api/search.json", selector);
     },
 
     isMobileSearchActive: false,

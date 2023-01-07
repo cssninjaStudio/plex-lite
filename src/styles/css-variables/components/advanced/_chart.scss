@@ -1,0 +1,11 @@
+:root {
+  --apexcharts-title-text-color: var(--blue-grey);
+  --circle-chart-bg-color: #efefef;
+  --circle-chart-bg-color-inverted: var(--smoke-white);
+}
+
+.is-dark {
+  --apexcharts-title-text-color: var(--medium-text);
+  --circle-chart-bg-color: var(--night-light-2);
+  --circle-chart-bg-color-inverted: var(--night-light-4);
+}

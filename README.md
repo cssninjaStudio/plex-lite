@@ -1,6 +1,6 @@
 # Plex Lite - Bulma + Alpine JS Dashboard template
 
-Plex Lite is a bulma dashboard kit built with Bulma 0.9.x and AlpineJS v3.x. Plex Lite is a demo version of Plex, our full dashboard UI Kit. Discover the full version here: [Full product demo](https://plex.csssninja.io).
+Plex Lite is a bulma dashboard kit built with built with Astro v1.x, Bulma 0.9.x and AlpineJS v3.x. Plex Lite is a demo version of Plex, our full dashboard UI Kit. Discover the full version here: [Full product demo](https://plex.csssninja.io).
 
 ![Screenshot](https://media.cssninja.io/products/plex/product.png "Plex")
 
@@ -11,7 +11,8 @@ Plex is built with [Bulma](https://bulma.io) and [Alpine JS](https://github.com/
 
 ## 👍 Features
 
-* Gulp 4 and nodejs 16.x (minimum)
+* Astro v1.x
+* Node.js 16.x (minimum)
 * Bulma 0.9.x
 * ES6 support
 * Alpine v3.x

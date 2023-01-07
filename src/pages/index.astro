@@ -1,0 +1,400 @@
+---
+import Layout from '../layouts/Default.astro';
+import DashboardActivitySectionDropdown from '../components/DashboardActivitySectionDropdown.astro';
+const title = 'Accounting Dashboard'
+---
+
+<Layout title={title}>
+  <div
+    x-data="initAccountingDashboard()"
+    x-init="initCustomChart()"
+    class="accounting-dashboard"
+  >
+    <div class="main-card">
+      <div class="left-side">
+        <div class="header">
+          <h2>1,263.78</h2>
+          <span>Oct 22, 2019</span>
+        </div>
+        <div class="intro-text">
+          <p>
+            Hello Anthony, it's nice to see you again on your dashboard. You
+            currently have 3 new invoices to review and 4 invoices to approve.
+            Here is your team's latest activity.
+          </p>
+        </div>
+        <div class="latest-items">
+          <div class="latest-item">
+            <div class="date">Oct 02</div>
+            <div class="type">Mobile Invoice</div>
+            <div class="amount is-negative">-<span>78.56</span></div>
+          </div>
+          <div class="latest-item">
+            <div class="date">Sep 29</div>
+            <div class="type">Bank Transfer</div>
+            <div class="amount is-positive">+<span>978.79</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="header">
+          <h3>Summary</h3>
+        </div>
+        <div class="custom-chart">
+          <div class="chart-bar" data-day="Sun">
+            <div class="animated-bar" data-percent="58"></div>
+          </div>
+          <div class="chart-bar" data-day="Mon">
+            <div class="animated-bar" data-percent="92"></div>
+          </div>
+          <div class="chart-bar" data-day="Tue">
+            <div class="animated-bar" data-percent="46"></div>
+          </div>
+          <div class="chart-bar" data-day="Wed">
+            <div class="animated-bar" data-percent="67"></div>
+          </div>
+          <div class="chart-bar" data-day="Thu">
+            <div class="animated-bar" data-percent="75"></div>
+          </div>
+          <div class="chart-bar" data-day="Fri">
+            <div class="animated-bar" data-percent="83"></div>
+          </div>
+          <div class="chart-bar" data-day="Sat">
+            <div class="animated-bar" data-percent="34"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <div class="left-card">
+        <div class="mail-icon-outer">
+          <div class="mail-icon-inner">
+            <div class="icon-wrap">
+              <i class="iconify" data-icon="feather:mail"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="message-sender">
+          <div class="avatar is-sm">
+            <img src="/img/avatars/42.jpg" alt="" />
+          </div>
+          <div class="meta">
+            <span>Mary Smith</span>
+            <span>sent a message</span>
+          </div>
+        </div>
+
+        <div class="message-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cur deinde
+            Metrodori liberos commendas...
+          </p>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="header">
+          <h3>Incoming</h3>
+          <a class="custom-button">View All</a>
+        </div>
+        <div class="card-inner">
+          <h2>2,459.12</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <i class="iconify" data-icon="feather:activity"></i>
+      <h3>Activity</h3>
+
+      <DashboardActivitySectionDropdown />
+    </div>
+
+    <div class="activity-items">
+      <!--Item-->
+      <div class="activity-item">
+        <div class="users">
+          <div class="avatars">
+            <div class="avatar">
+              <img src="/img/avatars/42.jpg" alt="" />
+            </div>
+            <div class="avatar is-fake is-orange">
+              <span>J</span>
+            </div>
+          </div>
+          <div class="meta">
+            <span>Mary and Janet</span>
+            <span>approved invoice #INV-7894</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="amount">
+            <span>Amount</span>
+            <span>768.49</span>
+          </div>
+          <div class="list-icon-button is-file">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <!--dropdown-->
+          <div
+            x-ref="dashdrop1"
+            @click.away="$refs.dashdrop1.classList.remove('is-active')"
+            class="dropdown-wrap is-right"
+          >
+            <button
+              @click="$refs.dashdrop1.classList.add('is-active')"
+              class="dropdown-button"
+            >
+              <i class="iconify" data-icon="feather:more-horizontal"></i>
+            </button>
+            <div class="drop-menu">
+              <div class="menu-inner">
+                <div class="menu-header">
+                  <h3>Actions</h3>
+                </div>
+                <div class="options-items">
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <div class="option-content">
+                      <span>View Documents</span>
+                      <span>View all related documents</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <div class="option-content">
+                      <span>Task Details</span>
+                      <span>View task details</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <div class="option-content">
+                      <span>Remove</span>
+                      <span>Remove item from feed</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Item-->
+      <div class="activity-item">
+        <div class="users">
+          <div class="avatars">
+            <div class="avatar is-fake is-green">
+              <span>P</span>
+            </div>
+            <div class="avatar is-fake is-secondary">
+              <span>K</span>
+            </div>
+          </div>
+          <div class="meta">
+            <span>Paul and Kristie</span>
+            <span>approved invoice #INV-7899</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="amount">
+            <span>Amount</span>
+            <span>259.12</span>
+          </div>
+          <div class="list-icon-button is-file">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <!--dropdown-->
+          <div
+            x-ref="dashdrop2"
+            @click.away="$refs.dashdrop2.classList.remove('is-active')"
+            class="dropdown-wrap is-right"
+          >
+            <button
+              @click="$refs.dashdrop2.classList.add('is-active')"
+              class="dropdown-button"
+            >
+              <i class="iconify" data-icon="feather:more-horizontal"></i>
+            </button>
+            <div class="drop-menu">
+              <div class="menu-inner">
+                <div class="menu-header">
+                  <h3>Actions</h3>
+                </div>
+                <div class="options-items">
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <div class="option-content">
+                      <span>View Documents</span>
+                      <span>View all related documents</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <div class="option-content">
+                      <span>Task Details</span>
+                      <span>View task details</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <div class="option-content">
+                      <span>Remove</span>
+                      <span>Remove item from feed</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Item-->
+      <div class="activity-item">
+        <div class="users">
+          <div class="avatars">
+            <div class="avatar">
+              <img src="/img/avatars/2.jpg" alt="" />
+            </div>
+            <div class="avatar is-fake is-primary">
+              <span>S</span>
+            </div>
+            <img class="avatar" src="/img/avatars/6.jpg" alt="" />
+          </div>
+          <div class="meta">
+            <span>Alex, Sheryl and Adam</span>
+            <span>approved invoice #INV-7899</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="amount">
+            <span>Amount</span>
+            <span>1042.49</span>
+          </div>
+          <div class="list-icon-button is-file">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <!--dropdown-->
+          <div
+            x-ref="dashdrop3"
+            @click.away="$refs.dashdrop3.classList.remove('is-active')"
+            class="dropdown-wrap is-right"
+          >
+            <button
+              @click="$refs.dashdrop3.classList.add('is-active')"
+              class="dropdown-button"
+            >
+              <i class="iconify" data-icon="feather:more-horizontal"></i>
+            </button>
+            <div class="drop-menu">
+              <div class="menu-inner">
+                <div class="menu-header">
+                  <h3>Actions</h3>
+                </div>
+                <div class="options-items">
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <div class="option-content">
+                      <span>View Documents</span>
+                      <span>View all related documents</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <div class="option-content">
+                      <span>Task Details</span>
+                      <span>View task details</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <div class="option-content">
+                      <span>Remove</span>
+                      <span>Remove item from feed</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Item-->
+      <div class="activity-item">
+        <div class="users">
+          <div class="avatars">
+            <div class="avatar">
+              <img src="/img/avatars/7.jpg" alt="" />
+            </div>
+            <div class="avatar">
+              <img src="/img/avatars/4.jpg" alt="" />
+            </div>
+            <div class="avatar">
+              <img src="/img/avatars/5.jpg" alt="" />
+            </div>
+            <div class="avatar is-fake is-count">
+              <span>+2</span>
+            </div>
+          </div>
+          <div class="meta">
+            <span>Tommy, Sally and Christina</span>
+            <span>approved invoice #INV-7815</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="amount">
+            <span>Amount</span>
+            <span>3269.99</span>
+          </div>
+          <div class="list-icon-button is-file">
+            <i class="iconify" data-icon="feather:file-text"></i>
+          </div>
+          <!--dropdown-->
+          <div
+            x-ref="dashdrop4"
+            @click.away="$refs.dashdrop4.classList.remove('is-active')"
+            class="dropdown-wrap is-right"
+          >
+            <button
+              @click="$refs.dashdrop4.classList.add('is-active')"
+              class="dropdown-button"
+            >
+              <i class="iconify" data-icon="feather:more-horizontal"></i>
+            </button>
+            <div class="drop-menu">
+              <div class="menu-inner">
+                <div class="menu-header">
+                  <h3>Actions</h3>
+                </div>
+                <div class="options-items">
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <div class="option-content">
+                      <span>View Documents</span>
+                      <span>View all related documents</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <div class="option-content">
+                      <span>Task Details</span>
+                      <span>View task details</span>
+                    </div>
+                  </a>
+                  <a class="options-item">
+                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <div class="option-content">
+                      <span>Remove</span>
+                      <span>Remove item from feed</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,53 @@
+<div
+  x-data="initDropdown()"
+  @click.away="close()"
+  class="dropdown-wrap is-right"
+  :class="{
+    'is-active': open,
+    '': !open
+  }"
+>
+  <span class="indicator"></span>
+  <button @click="toggle()" class="dropdown-button has-image">
+    <span class="avatar is-xs">
+      <img src="/img/avatars/25.jpg" alt="" />
+    </span>
+  </button>
+  <div class="drop-menu">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <h3>Menu</h3>
+      </div>
+      <div class="options-items">
+        <a class="options-item">
+          <i class="iconify" data-icon="feather:file-text"></i>
+          <div class="option-content">
+            <span>My Invoices</span>
+            <span>View your invoices</span>
+          </div>
+        </a>
+        <a class="options-item">
+          <i class="iconify" data-icon="feather:user"></i>
+          <div class="option-content">
+            <span>My Profile</span>
+            <span>View your profile</span>
+          </div>
+        </a>
+        <a class="options-item">
+          <i class="iconify" data-icon="feather:briefcase"></i>
+          <div class="option-content">
+            <span>My Teams</span>
+            <span>View your teams</span>
+          </div>
+        </a>
+        <a class="options-item">
+          <i class="iconify" data-icon="feather:lock"></i>
+          <div class="option-content">
+            <span>Logout</span>
+            <span>Logout from your account</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,3 @@
-
-
 export function initAccountingDashboard() {
   return {
     initCustomChart() {

@@ -1,0 +1,64 @@
+:root {
+  --alert-bg-color: var(--widget-grey);
+  --alert-primary-bg-color: var(--primary-light-35);
+  --alert-primary-inverted-bg-color: var(--primary);
+  --alert-info-bg-color: var(--info-light-48);
+  --alert-info-inverted-bg-color: var(--info);
+  --alert-success-bg-color: var(--success-light-45);
+  --alert-success-inverted-bg-color: var(--success);
+  --alert-warning-bg-color: var(--warning-light-32);
+  --alert-warning-inverted-bg-color: var(--warning);
+  --alert-danger-bg-color: var(--danger-light-38);
+  --alert-danger-inverted-bg-color: var(--danger);
+  --alert-purple-bg-color: var(--purple-light-36);
+  --alert-purple-inverted-bg-color: var(--purple);
+  --alert-yellow-bg-color: var(--yellow-light-22);
+  --alert-yellow-inverted-bg-color: var(--yellow);
+  --alert-orange-bg-color: var(--orange-light-20);
+  --alert-orange-inverted-bg-color: var(--orange);
+  --alert-green-bg-color: var(--green-light-22);
+  --alert-green-inverted-bg-color: var(--green);
+  --alert-red-bg-color: var(--red-light-40);
+  --alert-red-inverted-bg-color: var(--red);
+  --alert-blue-bg-color: var(--blue-light-34);
+  --alert-blue-inverted-bg-color: var(--blue);
+  --alert-color: var(--medium-text);
+  --alert-primary-color: var(--primary);
+  --alert-info-color: var(--info);
+  --alert-success-color: var(--success);
+  --alert-warning-color: var(--warning);
+  --alert-danger-color: var(--danger);
+  --alert-purple-color: var(--purple);
+  --alert-yellow-color: var(--yellow);
+  --alert-orange-color: var(--orange);
+  --alert-green-color: var(--green);
+  --alert-red-color: var(--red);
+  --alert-blue-color: var(--blue);
+}
+
+.is-dark {
+  --alert-bg-color: var(--night-light-12);
+  --alert-primary-bg-color: var(--primary);
+  --alert-info-bg-color: var(--info);
+  --alert-success-bg-color: var(--success);
+  --alert-warning-bg-color: var(--warning);
+  --alert-danger-bg-color: var(--danger);
+  --alert-purple-bg-color: var(--purple);
+  --alert-yellow-bg-color: var(--yellow);
+  --alert-orange-bg-color: var(--orange);
+  --alert-green-bg-color: var(--green);
+  --alert-red-bg-color: var(--red);
+  --alert-blue-bg-color: var(--blue);
+  --alert-color: var(--light-text);
+  --alert-primary-color: var(--white-smoke);
+  --alert-info-color: var(--white-smoke);
+  --alert-success-color: var(--white-smoke);
+  --alert-warning-color: var(--white-smoke);
+  --alert-danger-color: var(--white-smoke);
+  --alert-purple-color: var(--white-smoke);
+  --alert-yellow-color: var(--white-smoke);
+  --alert-orange-color: var(--white-smoke);
+  --alert-green-color: var(--white-smoke);
+  --alert-red-color: var(--white-smoke);
+  --alert-blue-color: var(--white-smoke);
+}
