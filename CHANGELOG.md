@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/cssninjaStudio/plex-lite/compare/v1.0.1...v2.0.0) (2023-01-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate from gulp to astro
+
+### Features
+
+* migrate from gulp to astro ([dae671e](https://github.com/cssninjaStudio/plex-lite/commit/dae671e251af7ed731c48830c6dc0e02e642b2ad))
+
 ### [1.0.1](https://github.com/cssninjaStudio/plex-lite/compare/v1.0.0...v1.0.1) (2022-11-28)
 
 ## 1.0.0 (2022-11-07)
