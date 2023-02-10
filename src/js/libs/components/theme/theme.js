@@ -20,12 +20,8 @@ export function initTheme() {
     },
 
     toggleMobileMenu() {
-      if (this.$store.app.isSidebarOpenedMobile === false) {
-        this.$store.app.isSidebarOpenedMobile = true;
-      } else {
-        this.$store.app.isSidebarOpenedMobile = false;
-      }
-      console.log("clicked mobile", this.$store.app.isSidebarOpenedMobile);
+      this.$store.app.isMobileActive = !this.$store.app.isMobileActive;
+      console.log("clicked mobile", this.$store.app.isMobileActive);
     },
 
     searchData(e) {

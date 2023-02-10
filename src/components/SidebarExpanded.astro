@@ -1,22 +1,22 @@
 <div
   x-data="initSidebar()"
   class="plex-sidebar"
-  :class="{
-        'is-inactive': $store.app.isLayoutExpanded,
-        '': !$store.app.isLayoutExpanded,
-        'is-mobile-active': $store.app.isMobileActive,
-        '': !$store.app.isMobileActive
-    }"
+  :class="[
+    $store.app.isLayoutExpanded ? 'is-inactive' : '',
+    $store.app.isMobileActive ? 'is-mobile-active' : '',
+  ]"
 >
   <div class="sidebar-header">
     <h3><a href="/">Plex</a></h3>
     <button
+      type="button"
       @click="toggleSidebar()"
       class="menu-icon v-5 is-hidden-mobile b-hidden-tablet-l b-hidden-tablet-p"
     >
       <span></span>
     </button>
     <button
+      type="button"
       @click="toggleMobileMenu()"
       class="menu-icon v-5 is-open mobile-item is-block mobile-sidebar-trigger"
     >
