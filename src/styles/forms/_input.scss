@@ -2,224 +2,217 @@
   1. Input
   ========================================================================== */
 
-.input {
-  font-family: var(--font);
-  height: 40px;
-  border-radius: 0.65rem;
-  transition: all 0.3s;
-  box-shadow: none;
-  background: var(--input-base-bg-color);
-  border-color: var(--input-base-border-color);
-  color: var(--input-base-color);
-
-  &:hover {
-    border-color: var(--input-base-border-color-hover);
-  }
-
-  &:focus {
-    box-shadow: var(--light-box-shadow);
-    border-color: var(--input-base-border-color-hover);
-
-    ~ .icon,
-    .form-icon {
-      color: var(--secondary) !important;
-    }
-  }
-
-  &::placeholder {
-    color: var(--input-placeholder-color);
-  }
-
-  &.is-medium {
-    height: 46px;
-    font-size: 1.15rem;
-  }
-
-  &.is-large {
-    height: 54px;
-    font-size: 1.35rem;
-  }
-
-  ~ .icon {
-    transition: color 0.3s;
-  }
-}
-
-/* ==========================================================================
-  2. Textarea
-========================================================================== */
-
-.textarea {
-  font-family: var(--font);
-  transition: all 0.3s;
-  box-shadow: none;
-  border-radius: 0.65rem;
-  background: var(--input-base-bg-color);
-  border-color: var(--input-base-border-color);
-  color: var(--input-base-color);
-
-  &:hover {
-    border-color: var(--input-base-border-color-hover);
-  }
-
-  &:focus {
-    box-shadow: var(--light-box-shadow);
-    border-color: var(--input-base-border-color-hover);
-  }
-
-  &::placeholder {
-    color: var(--input-placeholder-color);
-  }
-}
-
-/* ==========================================================================
-  3. Select
-========================================================================== */
-
-.select {
-  position: relative;
-  width: 100%;
-
-  select {
-    width: 100%;
+  .input {
     font-family: var(--font);
-    color: var(--input-base-color);
+    height: 40px;
+    border-radius: 0.65rem;
+    transition: all 0.3s;
+    box-shadow: none;
     background: var(--input-base-bg-color);
     border-color: var(--input-base-border-color);
-    border-radius: 0.65rem;
-    padding-bottom: calc(0.6em - 1px);
-    box-shadow: none;
-    transition: border 0.3s, box-shadow 0.3s;
-
+    color: var(--input-base-color);
+  
+    &:hover {
+      border-color: var(--input-base-border-color-hover);
+    }
+  
     &:focus {
       box-shadow: var(--light-box-shadow);
-      border-color: var(--input-base-focus-color);
-    }
-  }
-
-  &:not(.is-multiple):not(.is-loading) {
-    &::after {
-      transform: scale(0.8) rotate(-45deg) !important;
-      transition: transform 0.3s;
-      border-color: var(--light-text);
-    }
-
-    &:focus-within {
-      &::after {
-        top: 60%;
-        transform: scale(0.8) rotate(-225deg) !important;
+      border-color: var(--input-base-border-color-hover);
+  
+      ~ .icon,
+      .form-icon {
+        color: var(--primary) !important;
       }
     }
-  }
-
-  &.is-rounded {
-    select {
-      border-radius: 500rem;
+  
+    &::placeholder {
+      color: var(--input-placeholder-color);
     }
-  }
-}
-
-.has-icon .select select {
-  padding-#{$start-direction}: 38px;
-}
-
-/* ==========================================================================
-4. Field
-========================================================================== */
-
-.field {
-  > label, .form-label {
-    font-family: var(--font);
-    font-size: 0.95rem;
-    color: var(--input-label-color);
-  }
-
-  &.has-addons {
-    .control:first-child:not(:only-child) .button {
-      height: 40px;
-      background: var(--wrap-muted-color);
-      border-color: var(--input-base-border-color);
-      color: var(--medium-text);
-    }
-  }
-}
-
-/* ==========================================================================
-  5. Control
-========================================================================== */
-
-.control {
-  &.has-icons-#{$start-direction},
-  &.has-icons-#{$end-direction} {
-    .icon {
+  
+    &.is-medium {
       height: 46px;
-      width: 46px;
+      font-size: 1.15rem;
+    }
+  
+    &.is-large {
+      height: 54px;
+      font-size: 1.35rem;
+    }
+  
+    ~ .icon {
+      transition: color 0.3s;
     }
   }
-
-  &.has-icon {
-    .form-icon {
-      z-index: 1;
-
-      position: absolute;
-      #{$start-direction}: 0;
-      top: 0;
-      height: 40px;
-      width: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: color .3s;
-
-      svg,
-      .iconify {
-        font-size: 1.25rem;
-        height: 18px;
-        width: 18px;
-        stroke-width: 1.6px;
-        stroke: var(--input-form-icon-color);
-        color: var(--input-form-icon-color);
-        transition: stroke 0.3s color .3s;
+  
+  /* ==========================================================================
+    2. Textarea
+  ========================================================================== */
+  
+  .textarea {
+    font-family: var(--font);
+    transition: all 0.3s;
+    box-shadow: none;
+    border-radius: 0.65rem;
+    background: var(--input-base-bg-color);
+    border-color: var(--input-base-border-color);
+    color: var(--input-base-color);
+  
+    &:hover {
+      border-color: var(--input-base-border-color-hover);
+    }
+  
+    &:focus {
+      box-shadow: var(--light-box-shadow);
+      border-color: var(--input-base-border-color-hover);
+    }
+  
+    &::placeholder {
+      color: var(--input-placeholder-color);
+    }
+  }
+  
+  /* ==========================================================================
+    3. Select
+  ========================================================================== */
+  
+  .select {
+    position: relative;
+    width: 100%;
+  
+    select {
+      width: 100%;
+      font-family: var(--font);
+      color: var(--input-base-color);
+      background: var(--input-base-bg-color);
+      border-color: var(--input-base-border-color);
+      border-radius: 0.65rem;
+      padding-bottom: calc(0.6em - 1px);
+      box-shadow: none;
+      transition: border 0.3s, box-shadow 0.3s;
+  
+      &:focus {
+        box-shadow: var(--light-box-shadow);
+        border-color: var(--input-base-focus-color);
       }
-
-      &.right-icon {
-        #{$start-direction}: initial;
-        #{$end-direction}: 0;
+    }
+  
+    &:not(.is-multiple):not(.is-loading) {
+      &::after {
+        transform: scale(0.8) rotate(-45deg) !important;
+        transition: transform 0.3s;
+        border-color: var(--light-text);
       }
-
-      &.is-medium {
+  
+      &:focus-within {
+        &::after {
+          top: 60%;
+          transform: scale(0.8) rotate(-225deg) !important;
+        }
+      }
+    }
+  
+    &.is-rounded {
+      select {
+        border-radius: 500rem;
+      }
+    }
+  }
+  
+  .has-icon .select select {
+    padding-#{$start-direction}: 38px;
+  }
+  
+  /* ==========================================================================
+  4. Field
+  ========================================================================== */
+  
+  .field {
+    > label, .form-label {
+      font-family: var(--font);
+      font-size: 0.95rem;
+      color: var(--input-label-color);
+    }
+  
+    &.has-addons {
+      .control:first-child:not(:only-child) .button {
+        height: 40px;
+        background: var(--wrap-muted-color);
+        border-color: var(--input-base-border-color);
+        color: var(--medium-text);
+      }
+    }
+  }
+  
+  /* ==========================================================================
+    5. Control
+  ========================================================================== */
+  
+  .control {
+    &.has-icons-#{$start-direction},
+    &.has-icons-#{$end-direction} {
+      .icon {
         height: 46px;
         width: 46px;
       }
-
-      &.is-large {
-        height: 54px;
-        width: 54px;
-      }
     }
-
-    .input {
-      padding-#{$start-direction}: 40px;
-
-      &.is-medium {
-        padding-#{$start-direction}: 46px;
+  
+    &.has-icon {
+      .form-icon {
+        z-index: 1;
+        position: absolute;
+        #{$start-direction}: 0;
+        top: 0;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: color 0.3s;
+  
+        .iconify {
+          font-size: 1.15rem;
+          color: var(--input-form-icon-color);
+          transition: color .3s;
+        }
+  
+        &.right-icon {
+          #{$start-direction}: initial;
+          #{$end-direction}: 0;
+        }
+  
+        &.is-medium {
+          height: 46px;
+          width: 46px;
+        }
+  
+        &.is-large {
+          height: 54px;
+          width: 54px;
+        }
       }
-
-      &.is-large {
-        padding-#{$start-direction}: 54px;
-      }
-
-      &:focus {
-        ~ .form-icon {
-          color: var(--secondary) !important;
-
-          svg,
-          .iconify {
-            stroke: var(--secondary);
-            color: var(--secondary) !important;
+  
+      .input {
+        padding-#{$start-direction}: 40px;
+  
+        &.is-medium {
+          padding-#{$start-direction}: 46px;
+        }
+  
+        &.is-large {
+          padding-#{$start-direction}: 54px;
+        }
+  
+        &:focus {
+          ~ .form-icon {
+            color: var(--primary) !important;
+  
+            .iconify {
+              color: var(--primary) !important;
+            }
           }
         }
       }
     }
   }
-}
+  

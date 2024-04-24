@@ -107,7 +107,7 @@
   }
 
   &.is-inverted {
-    i {
+    i, .iconify {
       color: var(--white-smoke) !important;
     }
 
@@ -133,7 +133,7 @@
       background: var(--icon-primary-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-primary-color);
     }
 
@@ -153,7 +153,7 @@
       background: var(--icon-secondary-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-secondary-color);
     }
 
@@ -173,7 +173,7 @@
       background: var(--icon-success-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-success-color);
     }
 
@@ -193,7 +193,7 @@
       background: var(--icon-info-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-info-color);
     }
 
@@ -213,7 +213,7 @@
       background: var(--icon-warning-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-warning-color);
     }
 
@@ -233,7 +233,7 @@
       background: var(--icon-danger-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-danger-color);
     }
 
@@ -253,7 +253,7 @@
       background: var(--icon-purple-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-purple-color);
     }
 
@@ -273,7 +273,7 @@
       background: var(--icon-blue-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-blue-color);
     }
 
@@ -293,7 +293,7 @@
       background: var(--icon-yellow-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-yellow-color);
     }
 
@@ -334,7 +334,7 @@
       background: var(--icon-green-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-green-color);
     }
 
@@ -354,7 +354,7 @@
       background: var(--icon-red-inverted-bg-color);
     }
 
-    i {
+    i, .iconify {
       color: var(--icon-red-color);
     }
 

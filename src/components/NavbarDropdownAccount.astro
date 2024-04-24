@@ -1,12 +1,7 @@
-<div
-  x-data="initDropdown()"
-  @click.away="close()"
-  class="dropdown-wrap is-right"
-  :class="{
-    'is-active': open,
-    '': !open
-  }"
->
+<div x-data="initDropdown()" @click.away="close()" class="dropdown-wrap is-right" :class=`{
+  'is-active': open,
+  '': !open
+}`>
   <span class="indicator"></span>
   <button @click="toggle()" class="dropdown-button has-image">
     <span class="avatar is-xs">
@@ -20,28 +15,28 @@
       </div>
       <div class="options-items">
         <a class="options-item">
-          <i class="iconify" data-icon="feather:file-text"></i>
+          <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           <div class="option-content">
             <span>My Invoices</span>
             <span>View your invoices</span>
           </div>
         </a>
         <a class="options-item">
-          <i class="iconify" data-icon="feather:user"></i>
+          <iconify-icon class="iconify" icon="lucide:user"></iconify-icon>
           <div class="option-content">
             <span>My Profile</span>
             <span>View your profile</span>
           </div>
         </a>
         <a class="options-item">
-          <i class="iconify" data-icon="feather:briefcase"></i>
+          <iconify-icon class="iconify" icon="lucide:briefcase"></iconify-icon>
           <div class="option-content">
             <span>My Teams</span>
             <span>View your teams</span>
           </div>
         </a>
         <a class="options-item">
-          <i class="iconify" data-icon="feather:lock"></i>
+          <iconify-icon class="iconify" icon="lucide:lock"></iconify-icon>
           <div class="option-content">
             <span>Logout</span>
             <span>Logout from your account</span>

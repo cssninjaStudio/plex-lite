@@ -1,25 +1,13 @@
-<div
-  x-data="initSidebar()"
-  class="plex-sidebar"
-  :class="[
+<div x-data="initSidebar()" class="plex-sidebar" :class=`[
     $store.app.isLayoutExpanded ? 'is-inactive' : '',
     $store.app.isMobileActive ? 'is-mobile-active' : '',
-  ]"
->
+  ]`>
   <div class="sidebar-header">
     <h3><a href="/">Plex</a></h3>
-    <button
-      type="button"
-      @click="toggleSidebar()"
-      class="menu-icon v-5 is-hidden-mobile b-hidden-tablet-l b-hidden-tablet-p"
-    >
+    <button type="button" @click="toggleSidebar()" class="menu-icon v-5 is-hidden-mobile b-hidden-tablet-l b-hidden-tablet-p">
       <span></span>
     </button>
-    <button
-      type="button"
-      @click="toggleMobileMenu()"
-      class="menu-icon v-5 is-open mobile-item is-block mobile-sidebar-trigger"
-    >
+    <button type="button" @click="toggleMobileMenu()" class="menu-icon v-5 is-open mobile-item is-block mobile-sidebar-trigger">
       <span></span>
     </button>
   </div>
@@ -29,7 +17,7 @@
         <div class="avatar is-lg">
           <img src="/img/avatars/25.jpg" alt="" />
           <span class="badge">
-            <i class="iconify" data-icon="feather:check"></i>
+            <iconify-icon class="iconify" icon="lucide:check"></iconify-icon>
           </span>
         </div>
         <h3>Anthony Miller</h3>
@@ -38,76 +26,40 @@
     </div>
   </div>
   <div class="sidebar-menu has-slimscroll">
-    <a
-      href="/#dashboard-accounting"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('dashboard')}"
-    >
-      <i class="iconify" data-icon="feather:grid"></i>
+    <a href="/#dashboard-accounting" class="menu-item" :class="{'is-active': window.location.href.includes('dashboard')}">
+      <iconify-icon class="iconify" icon="lucide:grid"></iconify-icon>
       <span>Dashboard</span>
     </a>
-    <a
-      href="/#content-project-list"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('project')}"
-    >
-      <i class="iconify" data-icon="feather:layers"></i>
+    <a href="/#content-project-list" class="menu-item" :class="{'is-active': window.location.href.includes('project')}">
+      <iconify-icon class="iconify" icon="lucide:layers"></iconify-icon>
       <span>Projects</span>
     </a>
-    <a
-      href="/#content-crm-segments"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('crm')}"
-    >
-      <i class="iconify" data-icon="feather:briefcase"></i>
+    <a href="/#content-crm-segments" class="menu-item" :class="{'is-active': window.location.href.includes('crm')}">
+      <iconify-icon class="iconify" icon="lucide:briefcase"></iconify-icon>
       <span>Deals</span>
     </a>
-    <a
-      href="/#content-invoices-list"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('invoice')}"
-    >
-      <i class="iconify" data-icon="feather:file-text"></i>
+    <a href="/#content-invoices-list" class="menu-item" :class="{'is-active': window.location.href.includes('invoice')}">
+      <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
       <span>Invoices</span>
     </a>
-    <a
-      href="/#content-bills-list"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('bill')}"
-    >
-      <i class="iconify" data-icon="feather:file"></i>
+    <a href="/#content-bills-list" class="menu-item" :class="{'is-active': window.location.href.includes('bill')}">
+      <iconify-icon class="iconify" icon="lucide:file"></iconify-icon>
       <span>Bills</span>
     </a>
-    <a
-      href="/#content-contact-list"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('contact')}"
-    >
-      <i class="iconify" data-icon="feather:users"></i>
+    <a href="/#content-contact-list" class="menu-item" :class="{'is-active': window.location.href.includes('contact')}">
+      <iconify-icon class="iconify" icon="lucide:users"></iconify-icon>
       <span>Contacts</span>
     </a>
-    <a
-      href="/#content-forum-index"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('forum')}"
-    >
-      <i class="iconify" data-icon="feather:message-circle"></i>
+    <a href="/#content-forum-index" class="menu-item" :class="{'is-active': window.location.href.includes('forum')}">
+      <iconify-icon class="iconify" icon="lucide:message-circle"></iconify-icon>
       <span>Forum</span>
     </a>
-    <a
-      href="/#content-inbox"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('inbox')}"
-    >
-      <i class="iconify" data-icon="feather:mail"></i>
+    <a href="/#content-inbox" class="menu-item" :class="{'is-active': window.location.href.includes('inbox')}">
+      <iconify-icon class="iconify" icon="lucide:mail"></iconify-icon>
       <span>Messages</span>
     </a>
-    <a
-      href="/#content-settings"
-      class="menu-item"
-      :class="{'is-active': window.location.href.includes('settings')}"
-    >
-      <i class="iconify" data-icon="feather:settings"></i>
+    <a href="/#content-settings" class="menu-item" :class="{'is-active': window.location.href.includes('settings')}">
+      <iconify-icon class="iconify" icon="lucide:settings"></iconify-icon>
       <span>Settings</span>
     </a>
     <div class="naver"></div>

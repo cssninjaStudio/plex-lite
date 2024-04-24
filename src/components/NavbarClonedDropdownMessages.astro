@@ -1,15 +1,10 @@
-<div
-  x-data="initDropdown()"
-  @click.away="close()"
-  class="dropdown-wrap is-right"
-  :class="{
-    'is-active': open,
-    '': !open
-  }"
->
+<div x-data="initDropdown()" @click.away="close()" class="dropdown-wrap is-right" :class=`{
+  'is-active': open,
+  '': !open
+}`>
   <span class="indicator"></span>
   <button @click="toggle()" class="dropdown-button">
-    <i class="iconify" data-icon="feather:mail"></i>
+    <iconify-icon class="iconify" icon="lucide:mail"></iconify-icon>
   </button>
   <div class="drop-menu">
     <div class="menu-inner">

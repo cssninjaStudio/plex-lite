@@ -2,6 +2,12 @@
 Main wrapper
 ========================================================================== */
 
+.container {
+  &.is-wide {
+    max-width: 1280px !important;
+  }
+}
+
 .plex-wrapper {
   position: relative;
   width: calc(100% - 320px);
@@ -29,12 +35,9 @@ Main wrapper
         align-items: center;
         padding: 30px 0 20px 0;
 
-        > svg {
-          height: 22px;
-          width: 22px;
-          stroke: var(--light-text);
+        > .iconify {
+          font-size: 1.25rem;
           color: var(--light-text);
-          stroke-width: 1.4px;
           margin-#{$end-direction}: 8px;
         }
 
@@ -83,6 +86,19 @@ Main wrapper
     &:not(.is-expanded) {
       width: calc(100% - 280px);
       margin-#{$start-direction}: 280px;
+    }
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .columns {
+    &.is-block-portrait {
+      display: block !important;
+
+      .column {
+        width: 100% !important;
+        margin: 0 !important;
+      }
     }
   }
 }

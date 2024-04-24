@@ -201,7 +201,7 @@ Custom Dropdown
     }
   }
 
-  &.is-#{$end-direction} {
+  &.is-right {
     .drop-menu {
       #{$start-direction}: unset !important;
       #{$end-direction}: -12px;
@@ -267,6 +267,15 @@ Custom Dropdown
     cursor: pointer;
     transition: all 0.3s;
 
+    &.is-reset {
+      border-radius: 0;
+      border: none;
+
+      &:hover {
+        background: var(--wrap-bg-color);
+      }
+    }
+
     &.has-image {
       display: block;
       height: 40px;
@@ -294,6 +303,14 @@ Custom Dropdown
       transition: stroke 0.3s;
       pointer-events: none;
     }
+
+    .iconify {
+      font-size: 1.25rem;
+      stroke: var(--medium-text);
+      color: var(--medium-text);
+      transition: color 0.3s;
+      pointer-events: none;
+    }
   }
 
   .indicator {
@@ -304,7 +321,7 @@ Custom Dropdown
     height: 8px;
     width: 8px;
     border-radius: 50%;
-    background: var(--secondary);
+    background: var(--primary);
     z-index: 2;
   }
 
@@ -519,7 +536,7 @@ Notifications
 
           a {
             font-weight: 500;
-            color: var(--secondary-light-12);
+            color: var(--primary-light-12);
 
             &:hover {
               text-decoration: underline;
@@ -555,9 +572,9 @@ Options
       &:hover {
         background: var(--dropdown-bg-color-hover);
 
-        svg {
-          stroke: var(--secondary-light-8);
-          color: var(--secondary-light-8);
+        svg, .iconify {
+          stroke: var(--primary-light-8);
+          color: var(--primary-light-8);
         }
       }
 
@@ -570,6 +587,13 @@ Options
         transition: stroke 0.3s;
       }
 
+      .iconify {
+        font-size: 1.25rem;
+        stroke: var(--light-text);
+        color: var(--light-text);
+        transition: color 0.3s;
+      }
+
       .option-content {
         margin-#{$start-direction}: 12px;
 
@@ -578,8 +602,8 @@ Options
           line-height: 1.2;
 
           &:first-child {
-            font-family: var(--font-alt);
-            font-size: 0.75rem;
+            font-family: var(--font);
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--title-color);
           }
@@ -596,7 +620,7 @@ Options
 }
 
 @media (max-width: 767px) {
-  .static-nav {
+  .dashboard-nav {
     .dropdown-wrap {
       .drop-menu {
         #{$start-direction}: 0 !important;

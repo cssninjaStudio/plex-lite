@@ -1,15 +1,10 @@
-<div
-  x-data="initDropdown()"
-  @click.away="close()"
-  class="dropdown-wrap is-right"
-  :class="{
-    'is-active': open,
-    '': !open
-  }"
->
+<div x-data="initDropdown()" @click.away="close()" class="dropdown-wrap is-right" :class=`{
+  'is-active': open,
+  '': !open
+}`>
   <span class="indicator"></span>
   <button @click="toggle()" class="dropdown-button">
-    <i class="iconify" data-icon="feather:bell"></i>
+    <iconify-icon class="iconify" icon="lucide:bell"></iconify-icon>
   </button>
   <div class="drop-menu">
     <div class="menu-inner">
@@ -20,7 +15,7 @@
       <div class="notification-items">
         <div class="notification-item">
           <div class="avatar is-list-icon">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <div class="notification-content">
             <p><a>5 new invoices</a> were recently added</p>
@@ -29,7 +24,7 @@
         </div>
         <div class="notification-item">
           <div class="avatar is-list-icon">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <div class="notification-content">
             <p><a>3 invoices</a> were marked as approved</p>
@@ -38,7 +33,7 @@
         </div>
         <div class="notification-item is-warning">
           <div class="avatar is-list-icon">
-            <i class="iconify" data-icon="feather:alert-octagon"></i>
+            <iconify-icon class="iconify" icon="lucide:alert-octagon"></iconify-icon>
           </div>
           <div class="notification-content">
             <p>Some items managed by you are on <a>overdue</a></p>

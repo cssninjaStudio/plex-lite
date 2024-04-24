@@ -66,7 +66,7 @@ Collapsed sidebar
     }
 
     &.is-active {
-      svg {
+      svg, .iconify {
         stroke: var(--primary);
         color: var(--primary);
       }
@@ -125,6 +125,11 @@ Collapsed sidebar
       width: 20px;
       stroke-width: 1.6px;
       stroke: var(--light-text);
+      color: var(--light-text);
+    }
+
+    .iconify {
+      font-size: 1.25rem;
       color: var(--light-text);
     }
   }

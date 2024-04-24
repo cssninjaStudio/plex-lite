@@ -1,15 +1,11 @@
 ---
-import Layout from '../layouts/Default.astro';
-import DashboardActivitySectionDropdown from '../components/DashboardActivitySectionDropdown.astro';
+import Layout from '../layouts/Default.astro'
+import DashboardActivitySectionDropdown from '../components/DashboardActivitySectionDropdown.astro'
 const title = 'Accounting Dashboard'
 ---
 
 <Layout title={title}>
-  <div
-    x-data="initAccountingDashboard()"
-    x-init="initCustomChart()"
-    class="accounting-dashboard"
-  >
+  <div x-data="initAccountingDashboard()" x-init="initCustomChart()" class="accounting-dashboard">
     <div class="main-card">
       <div class="left-side">
         <div class="header">
@@ -17,11 +13,7 @@ const title = 'Accounting Dashboard'
           <span>Oct 22, 2019</span>
         </div>
         <div class="intro-text">
-          <p>
-            Hello Anthony, it's nice to see you again on your dashboard. You
-            currently have 3 new invoices to review and 4 invoices to approve.
-            Here is your team's latest activity.
-          </p>
+          <p>Hello Anthony, it's nice to see you again on your dashboard. You currently have 3 new invoices to review and 4 invoices to approve. Here is your team's latest activity.</p>
         </div>
         <div class="latest-items">
           <div class="latest-item">
@@ -71,7 +63,7 @@ const title = 'Accounting Dashboard'
         <div class="mail-icon-outer">
           <div class="mail-icon-inner">
             <div class="icon-wrap">
-              <i class="iconify" data-icon="feather:mail"></i>
+              <iconify-icon class="iconify" icon="lucide:mail"></iconify-icon>
             </div>
           </div>
         </div>
@@ -87,10 +79,7 @@ const title = 'Accounting Dashboard'
         </div>
 
         <div class="message-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cur deinde
-            Metrodori liberos commendas...
-          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cur deinde Metrodori liberos commendas...</p>
         </div>
       </div>
       <div class="right-card">
@@ -105,7 +94,7 @@ const title = 'Accounting Dashboard'
     </div>
 
     <div class="section-title">
-      <i class="iconify" data-icon="feather:activity"></i>
+      <iconify-icon class="iconify" icon="lucide:activity"></iconify-icon>
       <h3>Activity</h3>
 
       <DashboardActivitySectionDropdown />
@@ -134,19 +123,12 @@ const title = 'Accounting Dashboard'
             <span>768.49</span>
           </div>
           <div class="list-icon-button is-file">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <!--dropdown-->
-          <div
-            x-ref="dashdrop1"
-            @click.away="$refs.dashdrop1.classList.remove('is-active')"
-            class="dropdown-wrap is-right"
-          >
-            <button
-              @click="$refs.dashdrop1.classList.add('is-active')"
-              class="dropdown-button"
-            >
-              <i class="iconify" data-icon="feather:more-horizontal"></i>
+          <div x-ref="dashdrop1" @click.away="$refs.dashdrop1.classList.remove('is-active')" class="dropdown-wrap is-right">
+            <button @click="$refs.dashdrop1.classList.add('is-active')" class="dropdown-button">
+              <iconify-icon class="iconify" icon="lucide:more-horizontal"></iconify-icon>
             </button>
             <div class="drop-menu">
               <div class="menu-inner">
@@ -155,21 +137,21 @@ const title = 'Accounting Dashboard'
                 </div>
                 <div class="options-items">
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
                     <div class="option-content">
                       <span>View Documents</span>
                       <span>View all related documents</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <iconify-icon class="iconify" icon="lucide:check-circle"></iconify-icon>
                     <div class="option-content">
                       <span>Task Details</span>
                       <span>View task details</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <iconify-icon class="iconify" icon="lucide:trash-2"></iconify-icon>
                     <div class="option-content">
                       <span>Remove</span>
                       <span>Remove item from feed</span>
@@ -203,19 +185,12 @@ const title = 'Accounting Dashboard'
             <span>259.12</span>
           </div>
           <div class="list-icon-button is-file">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <!--dropdown-->
-          <div
-            x-ref="dashdrop2"
-            @click.away="$refs.dashdrop2.classList.remove('is-active')"
-            class="dropdown-wrap is-right"
-          >
-            <button
-              @click="$refs.dashdrop2.classList.add('is-active')"
-              class="dropdown-button"
-            >
-              <i class="iconify" data-icon="feather:more-horizontal"></i>
+          <div x-ref="dashdrop2" @click.away="$refs.dashdrop2.classList.remove('is-active')" class="dropdown-wrap is-right">
+            <button @click="$refs.dashdrop2.classList.add('is-active')" class="dropdown-button">
+              <iconify-icon class="iconify" icon="lucide:more-horizontal"></iconify-icon>
             </button>
             <div class="drop-menu">
               <div class="menu-inner">
@@ -224,21 +199,21 @@ const title = 'Accounting Dashboard'
                 </div>
                 <div class="options-items">
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
                     <div class="option-content">
                       <span>View Documents</span>
                       <span>View all related documents</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <iconify-icon class="iconify" icon="lucide:check-circle"></iconify-icon>
                     <div class="option-content">
                       <span>Task Details</span>
                       <span>View task details</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <iconify-icon class="iconify" icon="lucide:trash-2"></iconify-icon>
                     <div class="option-content">
                       <span>Remove</span>
                       <span>Remove item from feed</span>
@@ -273,19 +248,12 @@ const title = 'Accounting Dashboard'
             <span>1042.49</span>
           </div>
           <div class="list-icon-button is-file">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <!--dropdown-->
-          <div
-            x-ref="dashdrop3"
-            @click.away="$refs.dashdrop3.classList.remove('is-active')"
-            class="dropdown-wrap is-right"
-          >
-            <button
-              @click="$refs.dashdrop3.classList.add('is-active')"
-              class="dropdown-button"
-            >
-              <i class="iconify" data-icon="feather:more-horizontal"></i>
+          <div x-ref="dashdrop3" @click.away="$refs.dashdrop3.classList.remove('is-active')" class="dropdown-wrap is-right">
+            <button @click="$refs.dashdrop3.classList.add('is-active')" class="dropdown-button">
+              <iconify-icon class="iconify" icon="lucide:more-horizontal"></iconify-icon>
             </button>
             <div class="drop-menu">
               <div class="menu-inner">
@@ -294,21 +262,21 @@ const title = 'Accounting Dashboard'
                 </div>
                 <div class="options-items">
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
                     <div class="option-content">
                       <span>View Documents</span>
                       <span>View all related documents</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <iconify-icon class="iconify" icon="lucide:check-circle"></iconify-icon>
                     <div class="option-content">
                       <span>Task Details</span>
                       <span>View task details</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <iconify-icon class="iconify" icon="lucide:trash-2"></iconify-icon>
                     <div class="option-content">
                       <span>Remove</span>
                       <span>Remove item from feed</span>
@@ -348,19 +316,12 @@ const title = 'Accounting Dashboard'
             <span>3269.99</span>
           </div>
           <div class="list-icon-button is-file">
-            <i class="iconify" data-icon="feather:file-text"></i>
+            <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
           </div>
           <!--dropdown-->
-          <div
-            x-ref="dashdrop4"
-            @click.away="$refs.dashdrop4.classList.remove('is-active')"
-            class="dropdown-wrap is-right"
-          >
-            <button
-              @click="$refs.dashdrop4.classList.add('is-active')"
-              class="dropdown-button"
-            >
-              <i class="iconify" data-icon="feather:more-horizontal"></i>
+          <div x-ref="dashdrop4" @click.away="$refs.dashdrop4.classList.remove('is-active')" class="dropdown-wrap is-right">
+            <button @click="$refs.dashdrop4.classList.add('is-active')" class="dropdown-button">
+              <iconify-icon class="iconify" icon="lucide:more-horizontal"></iconify-icon>
             </button>
             <div class="drop-menu">
               <div class="menu-inner">
@@ -369,21 +330,21 @@ const title = 'Accounting Dashboard'
                 </div>
                 <div class="options-items">
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:file-text"></i>
+                    <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
                     <div class="option-content">
                       <span>View Documents</span>
                       <span>View all related documents</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:check-circle"></i>
+                    <iconify-icon class="iconify" icon="lucide:check-circle"></iconify-icon>
                     <div class="option-content">
                       <span>Task Details</span>
                       <span>View task details</span>
                     </div>
                   </a>
                   <a class="options-item">
-                    <i class="iconify" data-icon="feather:trash-2"></i>
+                    <iconify-icon class="iconify" icon="lucide:trash-2"></iconify-icon>
                     <div class="option-content">
                       <span>Remove</span>
                       <span>Remove item from feed</span>

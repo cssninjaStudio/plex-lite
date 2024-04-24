@@ -1,11 +1,7 @@
-<div
-  x-data="initCompressedSidebar()"
-  class="plex-compressed-sidebar"
-  :class="{
+<div x-data="initCompressedSidebar()" class="plex-compressed-sidebar" :class=`{
         'is-inactive': !$store.app.isLayoutExpanded,
         '': $store.app.isLayoutExpanded
-    }"
->
+    }`>
   <div class="compressed-header">
     <h3><a href="/">P</a></h3>
   </div>
@@ -15,68 +11,32 @@
     </button>
   </div>
   <div class="compressed-menu">
-    <a
-      href="/#dashboard-accounting"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('dashboard')}"
-    >
-      <i class="iconify" data-icon="feather:grid"></i>
+    <a href="/#dashboard-accounting" class="compressed-item" :class="{'is-active': window.location.href.includes('dashboard')}">
+      <iconify-icon class="iconify" icon="lucide:grid"></iconify-icon>
     </a>
-    <a
-      href="/#content-project-list"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('project')}"
-    >
-      <i class="iconify" data-icon="feather:layers"></i>
+    <a href="/#content-project-list" class="compressed-item" :class="{'is-active': window.location.href.includes('project')}">
+      <iconify-icon class="iconify" icon="lucide:layers"></iconify-icon>
     </a>
-    <a
-      href="/#content-crm-segments"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('crm')}"
-    >
-      <i class="iconify" data-icon="feather:briefcase"></i>
+    <a href="/#content-crm-segments" class="compressed-item" :class="{'is-active': window.location.href.includes('crm')}">
+      <iconify-icon class="iconify" icon="lucide:briefcase"></iconify-icon>
     </a>
-    <a
-      href="/#content-invoices-list"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('invoice')}"
-    >
-      <i class="iconify" data-icon="feather:file-text"></i>
+    <a href="/#content-invoices-list" class="compressed-item" :class="{'is-active': window.location.href.includes('invoice')}">
+      <iconify-icon class="iconify" icon="lucide:file-text"></iconify-icon>
     </a>
-    <a
-      href="/#content-bills-list"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('bill')}"
-    >
-      <i class="iconify" data-icon="feather:file"></i>
+    <a href="/#content-bills-list" class="compressed-item" :class="{'is-active': window.location.href.includes('bill')}">
+      <iconify-icon class="iconify" icon="lucide:file"></iconify-icon>
     </a>
-    <a
-      href="/#content-contact-list"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('contact')}"
-    >
-      <i class="iconify" data-icon="feather:users"></i>
+    <a href="/#content-contact-list" class="compressed-item" :class="{'is-active': window.location.href.includes('contact')}">
+      <iconify-icon class="iconify" icon="lucide:users"></iconify-icon>
     </a>
-    <a
-      href="/#content-forum-index"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('forum')}"
-    >
-      <i class="iconify" data-icon="feather:message-circle"></i>
+    <a href="/#content-forum-index" class="compressed-item" :class="{'is-active': window.location.href.includes('forum')}">
+      <iconify-icon class="iconify" icon="lucide:message-circle"></iconify-icon>
     </a>
-    <a
-      href="/#content-inbox"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('inbox')}"
-    >
-      <i class="iconify" data-icon="feather:mail"></i>
+    <a href="/#content-inbox" class="compressed-item" :class="{'is-active': window.location.href.includes('inbox')}">
+      <iconify-icon class="iconify" icon="lucide:mail"></iconify-icon>
     </a>
-    <a
-      href="/#settings"
-      class="compressed-item"
-      :class="{'is-active': window.location.href.includes('settings')}"
-    >
-      <i class="iconify" data-icon="feather:settings"></i>
+    <a href="/#settings" class="compressed-item" :class="{'is-active': window.location.href.includes('settings')}">
+      <iconify-icon class="iconify" icon="lucide:settings"></iconify-icon>
     </a>
     <div class="compressed-naver"></div>
   </div>

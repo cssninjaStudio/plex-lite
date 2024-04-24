@@ -36,7 +36,7 @@
         z-index: 3;
 
         &:checked {
-          + svg {
+          + .iconify {
             transform: translateY(0);
           }
 
@@ -47,17 +47,13 @@
         }
       }
 
-      svg {
+      .iconify {
         position: relative;
         #{$start-direction}: 0.5px;
         transform: translateY(20px);
         transition: transform 0.3s;
         transition-delay: 0.15s;
         z-index: 2;
-
-        :deep(path) {
-          stroke-width: 4px !important;
-        }
       }
 
       .inner-overlay {
@@ -106,7 +102,7 @@
   &.is-default {
     .checkbox-inner-wrap {
       .checkbox-inner {
-        svg {
+        .iconify {
           color: var(--checkbox-symbol-color-default);
         }
       }
@@ -214,7 +210,7 @@
         z-index: 3;
 
         &:checked {
-          + svg {
+          + .iconify {
             transform: scale(1);
           }
 
@@ -225,7 +221,7 @@
         }
       }
 
-      svg {
+      .iconify {
         position: relative;
         #{$start-direction}: 0.5px;
         transform: scale(0);
@@ -271,7 +267,7 @@
   &.is-default {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--checkbox-symbol-color-default);
         }
       }
@@ -281,7 +277,7 @@
   &.is-primary {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--primary);
         }
       }
@@ -291,7 +287,7 @@
   &.is-secondary {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--secondary);
         }
       }
@@ -301,7 +297,7 @@
   &.is-success {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--success);
         }
       }
@@ -311,7 +307,7 @@
   &.is-info {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--info);
         }
       }
@@ -321,7 +317,7 @@
   &.is-warning {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--warning);
         }
       }
@@ -331,7 +327,7 @@
   &.is-danger {
     .radio-inner-wrap {
       .radio-inner {
-        svg {
+        .iconify {
           color: var(--danger);
         }
       }

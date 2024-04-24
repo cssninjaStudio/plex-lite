@@ -49,38 +49,7 @@ Expanded sidebar
       text-align: center;
 
       .avatar {
-        //position: relative;
-        //max-width: 70px;
-        //max-height: 70px;
         margin: 0 auto 8px auto;
-
-        /*img {
-          display: block;
-          border-radius: 50%;
-        }*/
-
-        /*.badge {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          #{$end-direction}: 0;
-          height: 22px;
-          width: 22px;
-          border: 2px solid var(--sidebar-default-bg-color);
-          border-radius: 50%;
-          background: var(--primary);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          svg {
-            height: 10px;
-            width: 10px;
-            stroke: var(--white);
-            color: var(--white);
-            stroke-width: 3px;
-          }
-        }*/
       }
 
       h3 {
@@ -163,7 +132,7 @@ Expanded sidebar
           color: var(--title-color);
         }
 
-        svg {
+        svg, .iconify {
           stroke: var(--primary);
           color: var(--primary);
         }
@@ -182,6 +151,11 @@ Expanded sidebar
         width: 20px;
         stroke-width: 1.6px;
         stroke: var(--light-text);
+        color: var(--light-text);
+      }
+
+      .iconify {
+        font-size: 1.25rem;
         color: var(--light-text);
       }
     }

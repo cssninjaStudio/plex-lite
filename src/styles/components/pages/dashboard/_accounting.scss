@@ -477,7 +477,7 @@ Accounting Dashboard
             border-color: var(--wrap-border-color);
             box-shadow: var(--light-box-shadow);
 
-            svg {
+            svg, .iconify {
               stroke: var(--title-color);
               color: var(--title-color);
             }
@@ -486,9 +486,9 @@ Accounting Dashboard
           &.is-file {
             margin-#{$end-direction}: 1.875rem;
 
-            svg {
-              stroke: var(--secondary-light-8);
-              color: var(--secondary-light-8);
+            svg, .iconify {
+              stroke: var(--primary-light-8);
+              color: var(--primary-light-8);
             }
           }
 
@@ -499,6 +499,12 @@ Accounting Dashboard
             stroke: var(--light-text);
             stroke-width: 1.4px;
             transition: stroke 0.3s;
+          }
+
+          .iconify {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            transition: color 0.3s;
           }
         }
       }

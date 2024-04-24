@@ -5,50 +5,32 @@ import NotificationsDrop from '../components/NavbarDropdownNotifications.astro'
 ---
 
 <div class="static-nav">
-  <div
-    class="nav-start"
-    :class="{
+  <div class="nav-start" :class=`{
             'is-hidden': isMobileSearchActive,
             '': !isMobileSearchActive
-        }"
-  >
+        }`>
     <div class="nav-item mobile-item is-flex">
-      <button
-        @click="toggleMobileMenu()"
-        class="menu-icon v-2 mobile-sidebar-trigger"
-      >
+      <button @click="toggleMobileMenu()" class="menu-icon v-2 mobile-sidebar-trigger">
         <span></span>
       </button>
     </div>
 
     <div class="field">
       <div class="control has-icon">
-        <input
-          x-on:keyup="searchData($event)"
-          data-selector="static-results"
-          type="text"
-          class="input search-field"
-          placeholder="Search for transactions, accounts..."
-        />
+        <input x-on:keyup="searchData($event)" data-selector="static-results" type="text" class="input search-field" placeholder="Search for transactions, accounts..." />
         <div class="form-icon">
-          <i class="iconify" data-icon="feather:search"></i>
+          <iconify-icon class="iconify" icon="lucide:search"></iconify-icon>
         </div>
         <div id="static-results" class="search-results has-slimscroll"></div>
       </div>
     </div>
   </div>
-  <div
-    class="nav-end"
-    :class="{
+  <div class="nav-end" :class=`{
         'is-hidden': isMobileSearchActive,
         '': !isMobileSearchActive
-    }"
-  >
-    <div
-      @click="toggleMobileSearch()"
-      class="nav-item mobile-item is-flex mobile-search-trigger"
-    >
-      <i class="iconify" data-icon="feather:search"></i>
+    }`>
+    <div @click="toggleMobileSearch()" class="nav-item mobile-item is-flex mobile-search-trigger">
+      <iconify-icon class="iconify" icon="lucide:search"></iconify-icon>
     </div>
 
     <MessagesDrop />
@@ -56,27 +38,20 @@ import NotificationsDrop from '../components/NavbarDropdownNotifications.astro'
     <NotificationsDrop />
 
     <label class="theme-toggle">
-      <input
-        type="checkbox"
-        x-on:change="toggleTheme()"
-        :checked="$store.app.isDark"
-      />
+      <input type="checkbox" x-on:change="toggleTheme()" :checked="$store.app.isDark" />
       <span class="theme-toggle-inner">
-        <i class="sun-icon iconify" data-icon="feather:sun"></i>
-        <i class="moon-icon iconify" data-icon="feather:moon"></i>
+        <iconify-icon class="sun-icon iconify" icon="lucide:sun"></iconify-icon>
+        <iconify-icon class="moon-icon iconify" icon="lucide:moon"></iconify-icon>
       </span>
     </label>
 
     <AccountDrop />
   </div>
 
-  <div
-    class="mobile-search"
-    :class="{
+  <div class="mobile-search" :class=`{
           'is-active': isMobileSearchActive,
           '': !isMobileSearchActive
-      }"
-  >
+      }`>
     <div class="field">
       <div class="control has-icon has-icon-right">
         <input
@@ -88,18 +63,12 @@ import NotificationsDrop from '../components/NavbarDropdownNotifications.astro'
           placeholder="Search for transactions, accounts..."
         />
         <div class="form-icon">
-          <i class="iconify" data-icon="feather:search"></i>
+          <iconify-icon class="iconify" icon="lucide:search"></iconify-icon>
         </div>
-        <div
-          @click="toggleMobileSearch(), $refs.searchmobilestatic.value = ''"
-          class="form-icon right-icon mobile-search-trigger"
-        >
-          <i class="iconify" data-icon="feather:x"></i>
+        <div @click="toggleMobileSearch(), $refs.searchmobilestatic.value = ''" class="form-icon right-icon mobile-search-trigger">
+          <iconify-icon class="iconify" icon="lucide:x"></iconify-icon>
         </div>
-        <div
-          id="mobile-static-results"
-          class="search-results has-slimscroll"
-        ></div>
+        <div id="mobile-static-results" class="search-results has-slimscroll"></div>
       </div>
     </div>
   </div>
